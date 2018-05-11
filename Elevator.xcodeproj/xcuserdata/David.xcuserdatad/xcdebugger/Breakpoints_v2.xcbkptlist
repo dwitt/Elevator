@@ -602,7 +602,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/Data Models/GovernorCodeRequirement.swift"
-            timestampString = "546191588.069054"
+            timestampString = "547691379.839051"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
@@ -682,7 +682,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/View Models/GovernorInspectionViewModel.swift"
-            timestampString = "546987749.28327"
+            timestampString = "547691379.839339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -746,7 +746,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/Data Models/GovernorCodeRequirement.swift"
-            timestampString = "546191588.069331"
+            timestampString = "547691379.839494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -762,7 +762,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/View Models/GovernorInspectionViewModel.swift"
-            timestampString = "546987749.284287"
+            timestampString = "547691379.839581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -778,11 +778,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/View Models/GovernorInspectionViewModel.swift"
-            timestampString = "546987749.2845629"
+            timestampString = "547691379.839658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "elevatorRatedSpeedForGovernorSetting"
             landmarkType = "24">
          </BreakpointContent>
@@ -794,11 +794,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/View Models/GovernorInspectionViewModel.swift"
-            timestampString = "546987749.284811"
+            timestampString = "547691379.83973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "elevatorRatedSpeedForGovernorSetting"
             landmarkType = "24">
          </BreakpointContent>
@@ -842,7 +842,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/Data Models/GovernorCodeRequirement.swift"
-            timestampString = "546191588.06954"
+            timestampString = "547691379.839808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "243"
@@ -890,7 +890,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/View Models/GovernorInspectionViewModel.swift"
-            timestampString = "546987749.28613"
+            timestampString = "547691379.839906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -922,13 +922,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/Data Models/Safeties Code Requirement.swift"
-            timestampString = "546987749.287535"
+            timestampString = "547691379.840011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "222"
             endingLineNumber = "222"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tabulatedSlide(distance:forSpeed:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1002,11 +1002,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/View Models/GovernorInspectionViewModel.swift"
-            timestampString = "546987749.298373"
+            timestampString = "547691379.840135"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "init(elevator:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1023,8 +1023,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
             endingLineNumber = "12"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "TypeBSafetyInspectionTableViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1041,6 +1041,22 @@
             endingLineNumber = "44"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Elevator/View Controllers/governor Table View Controller/View Models/GovernorInspectionViewModel.swift"
+            timestampString = "547691379.840255"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "GovernorInspectionViewModel"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

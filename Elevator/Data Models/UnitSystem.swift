@@ -1,5 +1,5 @@
 //
-//  Units.swift
+//  UnitSystem.swift
 //  Elevator
 //
 //  Created by David Witt on 2018-04-01.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Units: Int {
+enum UnitSystem: Int {
   case metric = 0
   case imperial = 1
     

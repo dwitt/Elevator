@@ -167,10 +167,10 @@ class governorTableViewController: UITableViewController {
   
   
   @IBAction func ratedSpeedForGovernorUnitsChanged() {
-    // called when the units for the rated speed for governor unit changes
+    // called when the unitSystem for the rated speed for governor unit changes
     // TODO: - remove extra comments
     
-    // update the view model with the new speed units
+    // update the view model with the new speed unitSystem
     
     saveGovernorTrippingSpeedText()
     viewModel?.elevatorRatedSpeedForGovernorSetting.unitsAsInt = ratedSpeedUnitsForGovernorSegmentControl.selectedSegmentIndex
@@ -324,7 +324,7 @@ extension governorTableViewController: UITextViewDelegate {
   
 }
 
-extension Speed {
+extension Measurement {
   func valueAsStringWhen(conditionIsFalse : Bool) -> String {
     if !conditionIsFalse {
       return ( "---" )

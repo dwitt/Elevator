@@ -12,5 +12,6 @@ struct ElevatorCode {
 
     
   var governor: GovernorCodeRequirement = GovernorCodeRequirement()
+  var safeties: SafetiesCodeRequirement? = SafetiesCodeRequirement()
   
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2018 David Witt. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 struct SafetiesCodeRequirement {
   
@@ -26,8 +26,8 @@ struct SafetiesCodeRequirement {
   
   // MARK: - Public Properties
   
-  var maximumGovernorTrippingSpeed: Speed = Speed(value: 0.0, units: .metric)
-  var governorTrippingSpeed: Speed = Speed(value: 0.0, units: .metric)
+  var maximumGovernorTrippingSpeed: Measurement = Measurement(value: 0.0, units: .metric, parameter: .speed)
+  var governorTrippingSpeed: Measurement = Measurement(value: 0.0, units: .metric, parameter: .speed)
   var useGovernorTrippingSpeedForStoppingDistance: Bool = true
   
   // MARK: Public Computed Properties
@@ -132,7 +132,7 @@ struct SafetiesCodeRequirement {
   // MARK: - Private member functions for computed properties
   
   
-  private func tabulatedStoppingDistances(inUnits units: Units) -> [Int : [Int]] {
+  private func tabulatedStoppingDistances(inUnits units: UnitSystem) -> [Int : [Int]] {
     
     switch units {
     case .metric:
@@ -142,9 +142,9 @@ struct SafetiesCodeRequirement {
     }
   }
   
-  private func stopping(distance: Distance, forSpeed speed: Speed) -> Int {
+  private func stopping(distance: Distance, forSpeed speed: Measurement) -> Int {
     
-    let units = speed.units
+    let units = speed.unitSystem
     let speedKey = speed.valueToSpeedKey()
     
     if speedKey <= speedThresholdForTypeBSafetyStoppingDistance.low.inUnits(units) {
@@ -159,7 +159,7 @@ struct SafetiesCodeRequirement {
     
   }
   
-  private func lowSpeedSlide(distance: Distance, forSpeed speed: Speed) -> Int {
+  private func lowSpeedSlide(distance: Distance, forSpeed speed: Measurement) -> Int {
     
     switch distance {
     case .minimum:
@@ -169,9 +169,9 @@ struct SafetiesCodeRequirement {
     }
   }
   
-  private func lowSpeedMaximumPermittedSlide(forSpeed speed: Speed) -> Int {
+  private func lowSpeedMaximumPermittedSlide(forSpeed speed: Measurement) -> Int {
     
-    switch speed.units {
+    switch speed.unitSystem {
     case .metric:
       return 380
     case .imperial:
@@ -179,9 +179,9 @@ struct SafetiesCodeRequirement {
     }
   }
   
-  private func lowSpeedMinimumPermittedSlide(forSpeed speed: Speed) -> Int {
+  private func lowSpeedMinimumPermittedSlide(forSpeed speed: Measurement) -> Int {
     
-    switch speed.units {
+    switch speed.unitSystem {
     case .metric:
       return 25
     case .imperial:
@@ -189,7 +189,7 @@ struct SafetiesCodeRequirement {
     }
   }
   
-  private func calculatedSlide(distance: Distance, forSpeed speed: Speed) -> Int {
+  private func calculatedSlide(distance: Distance, forSpeed speed: Measurement) -> Int {
     
     switch distance {
     case .minimum:
@@ -199,9 +199,9 @@ struct SafetiesCodeRequirement {
     }
   }
   
-  private func calculateMaximumPermittedSlide(forSpeed speed: Speed) -> Int {
+  private func calculateMaximumPermittedSlide(forSpeed speed: Measurement) -> Int {
     
-    switch speed.units {
+    switch speed.unitSystem {
     case .metric:
       return Int((pow(speed.value,2.0) / 6.870 + 0.256) * 1000.0)
     case .imperial:
@@ -209,9 +209,9 @@ struct SafetiesCodeRequirement {
     }
   }
   
-  private func calculateMinimumPermittedSlide(forSpeed speed: Speed) -> Int{
+  private func calculateMinimumPermittedSlide(forSpeed speed: Measurement) -> Int{
     
-    switch speed.units {
+    switch speed.unitSystem {
     case .metric:
       return Int((pow(speed.value,2.0) / 19.63) * 1000.0)
     case .imperial:
@@ -219,10 +219,10 @@ struct SafetiesCodeRequirement {
     }
   }
   
-  private func tabulatedSlide(distance: Distance, forSpeed speed: Speed) -> Int {
+  private func tabulatedSlide(distance: Distance, forSpeed speed: Measurement) -> Int {
    
     let speedKey = speed.valueToSpeedKey()
-    let units = speed.units
+    let units = speed.unitSystem
     
     let tabulatedStoppingDistancesForSpeed = tabulatedStoppingDistances(inUnits: units)
     
@@ -234,11 +234,11 @@ struct SafetiesCodeRequirement {
   }
 
   
-  private func interpolatedSlide(distance: Distance, forSpeed speed: Speed) -> Int {
+  private func interpolatedSlide(distance: Distance, forSpeed speed: Measurement) -> Int {
     
     var slideDistance: Int = 0
     let speedKey = speed.valueToSpeedKey()
-    let units = speed.units
+    let units = speed.unitSystem
     let tabulatedStoppingDistanceForSpeed = tabulatedStoppingDistances(inUnits: units)
   
     let tabulatedSpeeds = Array(tabulatedStoppingDistanceForSpeed.keys).sorted(by: < )
@@ -267,7 +267,7 @@ struct SafetiesCodeRequirement {
   
   enum speedThresholdForTypeBSafetyStoppingDistance {
     case low, high
-    func inUnits(_ units: Units) -> Int {
+    func inUnits(_ units: UnitSystem) -> Int {
       switch self {
       case .low:
         if units == .metric { return 90 } else { return 175 }
@@ -279,10 +279,10 @@ struct SafetiesCodeRequirement {
   
 }
 
-extension Speed {
+extension Measurement {
   
   func valueToSpeedKey() -> Int {
-    if units == .metric {
+    if unitSystem == .metric {
       return Int(100 * value)
     } else {
       return Int(value)

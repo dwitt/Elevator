@@ -22,7 +22,7 @@ struct GovernorInspectionViewModel {
   
   var tabulatedEquivalentSpeeds: Bool {
     didSet {
-      elevatorRatedSpeedForGovernorSetting = inspector.elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed: elevator.ratedSpeed, usingTabulatedSpeeds: tabulatedEquivalentSpeeds, resultInUnits: elevatorRatedSpeedForGovernorSetting.units)
+      elevatorRatedSpeedForGovernorSetting = inspector.elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed: elevator.ratedSpeed, usingTabulatedSpeeds: tabulatedEquivalentSpeeds, resultInUnits: elevatorRatedSpeedForGovernorSetting.unitSystem)
       }
   }
   
@@ -50,13 +50,13 @@ struct GovernorInspectionViewModel {
     }
   }
   
-  var elevatorRatedSpeed: Speed {
+  var elevatorRatedSpeed: Measurement {
     get {
       return elevator.ratedSpeed
     }
   }
   
-  var governorTrippingSpeed: Speed {
+  var governorTrippingSpeed: Measurement {
     get {
       return elevator.governorTrippingSpeed
     }
@@ -68,26 +68,27 @@ struct GovernorInspectionViewModel {
     }
   }
   
-  // MARK: - Speed Variables
+  // MARK: - Measurement Variables
 
-  var elevatorRatedSpeedForGovernorSetting: Speed {
+  var elevatorRatedSpeedForGovernorSetting: Measurement {
     didSet {
       
-      elevatorRatedSpeedForGovernorSetting = inspector.elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed: elevator.ratedSpeed, usingTabulatedSpeeds: tabulatedEquivalentSpeeds, resultInUnits: elevatorRatedSpeedForGovernorSetting.units)
+      elevatorRatedSpeedForGovernorSetting = inspector.elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed: elevator.ratedSpeed, usingTabulatedSpeeds: tabulatedEquivalentSpeeds, resultInUnits: elevatorRatedSpeedForGovernorSetting.unitSystem
+      )
       
       code.governor.elevatorRatedSpeed = elevatorRatedSpeedForGovernorSetting
       governorMaximumTrippingSpeed = code.governor.maximumTrippingSpeed
       governorMinimumTrippingSpeed = code.governor.minimumTrippingSpeed
       
-      governorTrippingSpeed.unitsAsInt = elevatorRatedSpeedForGovernorSetting.units.rawValue
+      governorTrippingSpeed.unitsAsInt = elevatorRatedSpeedForGovernorSetting.unitSystem.rawValue
 
     }
   }
 
-  var governorMaximumTrippingSpeed: Speed
-  var governorMinimumTrippingSpeed: Speed
-  var governorOverspeedSwitchMaximumTrippingSpeed: Speed
-  var governorSpeedReducingSwitchMaximumTrippingSpeed: Speed
+  var governorMaximumTrippingSpeed: Measurement
+  var governorMinimumTrippingSpeed: Measurement
+  var governorOverspeedSwitchMaximumTrippingSpeed: Measurement
+  var governorSpeedReducingSwitchMaximumTrippingSpeed: Measurement
   
   // MARK: - Initializer
   
@@ -95,12 +96,12 @@ struct GovernorInspectionViewModel {
     
     self.elevator = elevator
     
-    //elevator.governorTrippingSpeed.units = elevator.ratedSpeed.units
+    //elevator.governorTrippingSpeed.unitSystem = elevator.ratedSpeed.unitSystem
     //elevator.governorTrippingSpeed.convertValueToCurrentUnits()
     
     elevatorRatedSpeedForGovernorSetting = elevator.ratedSpeed
     
-    // TODO: - adjust all of the units to match the rated Speed
+    // TODO: - adjust all of the unitSystem to match the rated Measurement
     // elevator.governorTrippingSpeed
     // 
     
@@ -130,9 +131,9 @@ struct GovernorInspectionViewModel {
   }
   
   private mutating func updateMaxMinToMatchTrippingSpeedUnits() {
-    governorMaximumTrippingSpeed.units = governorTrippingSpeed.units
+    governorMaximumTrippingSpeed.unitSystem = governorTrippingSpeed.unitSystem
     governorMaximumTrippingSpeed.convertValueToCurrentUnits()
-    governorMinimumTrippingSpeed.units = governorTrippingSpeed.units
+    governorMinimumTrippingSpeed.unitSystem = governorTrippingSpeed.unitSystem
     governorMinimumTrippingSpeed.convertValueToCurrentUnits()
     
   }

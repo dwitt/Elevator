@@ -11,14 +11,14 @@ import XCTest
 
 class SpeedTests: XCTestCase {
   
-  var metricSpeed: Speed!
-  var imperialSpeed: Speed!
+  var metricSpeed: Measurement!
+  var imperialSpeed: Measurement!
   
   override func setUp() {
     super.setUp()
     
-    metricSpeed = Speed(value: 0.5, units: .metric)
-    imperialSpeed = Speed(value: 100, units: .imperial)
+    metricSpeed = Measurement(value: 0.5, units: .metric)
+    imperialSpeed = Measurement(value: 100, units: .imperial)
     
     
   }
