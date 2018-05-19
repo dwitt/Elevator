@@ -167,10 +167,10 @@ class governorTableViewController: UITableViewController {
   
   
   @IBAction func ratedSpeedForGovernorUnitsChanged() {
-    // called when the unit for the rated speed for governor unit changes
+    // called when the units for the rated speed for governor units changes
     // TODO: - remove extra comments
     
-    // update the view model with the new speed unit
+    // update the view model with the new speed units
     
     saveGovernorTrippingSpeedText()
     viewModel?.elevatorRatedSpeedForGovernorSetting.unitsAsInt = ratedSpeedUnitsForGovernorSegmentControl.selectedSegmentIndex

@@ -25,7 +25,7 @@ class Elevator {
     self.staticControl = staticControl
     
     // self.governorTrippingSpeed = Measurement(value: 0.0, unit: ratedSpeed.unit)
-    governorTrippingSpeed = MyMeasurement(of: .speed, value: 0, units: ratedSpeed.unit)
+    governorTrippingSpeed = MyMeasurement(of: .speed, value: 0, units: ratedSpeed.units)
   }
   
   

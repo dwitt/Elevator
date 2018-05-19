@@ -22,7 +22,7 @@ struct GovernorInspectionViewModel {
   
   var tabulatedEquivalentSpeeds: Bool {
     didSet {
-      elevatorRatedSpeedForGovernorSetting = inspector.elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed: elevator.ratedSpeed, usingTabulatedSpeeds: tabulatedEquivalentSpeeds, resultInUnits: elevatorRatedSpeedForGovernorSetting.unit)
+      elevatorRatedSpeedForGovernorSetting = inspector.elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed: elevator.ratedSpeed, usingTabulatedSpeeds: tabulatedEquivalentSpeeds, resultInUnits: elevatorRatedSpeedForGovernorSetting.units)
       }
   }
   
@@ -73,14 +73,14 @@ struct GovernorInspectionViewModel {
   var elevatorRatedSpeedForGovernorSetting: MyMeasurement {
     didSet {
       
-      elevatorRatedSpeedForGovernorSetting = inspector.elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed: elevator.ratedSpeed, usingTabulatedSpeeds: tabulatedEquivalentSpeeds, resultInUnits: elevatorRatedSpeedForGovernorSetting.unit
+      elevatorRatedSpeedForGovernorSetting = inspector.elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed: elevator.ratedSpeed, usingTabulatedSpeeds: tabulatedEquivalentSpeeds, resultInUnits: elevatorRatedSpeedForGovernorSetting.units
       )
       
       code.governor.elevatorRatedSpeed = elevatorRatedSpeedForGovernorSetting
       governorMaximumTrippingSpeed = code.governor.maximumTrippingSpeed
       governorMinimumTrippingSpeed = code.governor.minimumTrippingSpeed
       
-      governorTrippingSpeed.unitsAsInt = elevatorRatedSpeedForGovernorSetting.unit.rawValue
+      governorTrippingSpeed.unitsAsInt = elevatorRatedSpeedForGovernorSetting.units.rawValue
 
     }
   }
@@ -131,9 +131,9 @@ struct GovernorInspectionViewModel {
   }
   
   private mutating func updateMaxMinToMatchTrippingSpeedUnits() {
-    governorMaximumTrippingSpeed.unit = governorTrippingSpeed.unit
+    governorMaximumTrippingSpeed.units = governorTrippingSpeed.units
     governorMaximumTrippingSpeed.convertValueToCurrentUnits()
-    governorMinimumTrippingSpeed.unit = governorTrippingSpeed.unit
+    governorMinimumTrippingSpeed.units = governorTrippingSpeed.units
     governorMinimumTrippingSpeed.convertValueToCurrentUnits()
     
   }

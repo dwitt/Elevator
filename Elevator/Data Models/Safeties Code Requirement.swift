@@ -144,7 +144,7 @@ struct SafetiesCodeRequirement {
   
   private func stopping(distance: Distance, forSpeed speed: MyMeasurement) -> Int {
     
-    let units = speed.unit
+    let units = speed.units
     let speedKey = speed.valueToSpeedKey()
     
     if speedKey <= speedThresholdForTypeBSafetyStoppingDistance.low.inUnits(units) {
@@ -171,7 +171,7 @@ struct SafetiesCodeRequirement {
   
   private func lowSpeedMaximumPermittedSlide(forSpeed speed: MyMeasurement) -> Int {
     
-    switch speed.unit {
+    switch speed.units {
     case .metric:
       return 380
     case .imperial:
@@ -181,7 +181,7 @@ struct SafetiesCodeRequirement {
   
   private func lowSpeedMinimumPermittedSlide(forSpeed speed: MyMeasurement) -> Int {
     
-    switch speed.unit {
+    switch speed.units {
     case .metric:
       return 25
     case .imperial:
@@ -201,7 +201,7 @@ struct SafetiesCodeRequirement {
   
   private func calculateMaximumPermittedSlide(forSpeed speed: MyMeasurement) -> Int {
     
-    switch speed.unit {
+    switch speed.units {
     case .metric:
       return Int((pow(speed.value,2.0) / 6.870 + 0.256) * 1000.0)
     case .imperial:
@@ -211,7 +211,7 @@ struct SafetiesCodeRequirement {
   
   private func calculateMinimumPermittedSlide(forSpeed speed: MyMeasurement) -> Int{
     
-    switch speed.unit {
+    switch speed.units {
     case .metric:
       return Int((pow(speed.value,2.0) / 19.63) * 1000.0)
     case .imperial:
@@ -222,7 +222,7 @@ struct SafetiesCodeRequirement {
   private func tabulatedSlide(distance: Distance, forSpeed speed: MyMeasurement) -> Int {
    
     let speedKey = speed.valueToSpeedKey()
-    let units = speed.unit
+    let units = speed.units
     
     let tabulatedStoppingDistancesForSpeed = tabulatedStoppingDistances(inUnits: units)
     
@@ -238,7 +238,7 @@ struct SafetiesCodeRequirement {
     
     var slideDistance: Int = 0
     let speedKey = speed.valueToSpeedKey()
-    let units = speed.unit
+    let units = speed.units
     let tabulatedStoppingDistanceForSpeed = tabulatedStoppingDistances(inUnits: units)
   
     let tabulatedSpeeds = Array(tabulatedStoppingDistanceForSpeed.keys).sorted(by: < )
@@ -282,7 +282,7 @@ struct SafetiesCodeRequirement {
 extension MyMeasurement {
   
   func valueToSpeedKey() -> Int {
-    if unit == .metric {
+    if units == .metric {
       return Int(100 * value)
     } else {
       return Int(value)

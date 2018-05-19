@@ -20,9 +20,9 @@ enum MeasurementParameter: Int {
     // MARK: - Public properties
     
     var value: Double = 0.0
-    var unit: UnitSystem = .metric {
+    var units: UnitSystem = .metric {
       willSet {
-        previousUnitSystem = unit
+        previousUnitSystem = units
       }
     }
     var parameter: MeasurementParameter
@@ -41,7 +41,7 @@ enum MeasurementParameter: Int {
     
 //    init(value: Double, units: UnitSystem, parameter: MeasurementParameter) {
       self.value = value
-      self.unit = units
+      self.units = units
       self.parameter = parameter
       
       switch parameter {
@@ -62,8 +62,8 @@ enum MeasurementParameter: Int {
     // MARK: - Public methods
     
     mutating func convertValueToCurrentUnits() {
-      if unit != previousUnitSystem {
-        switch unit {
+      if units != previousUnitSystem {
+        switch units {
         case .metric:
           value = value * conversionFactorFpmToMps
         case .imperial:
@@ -74,7 +74,7 @@ enum MeasurementParameter: Int {
     
     var valueAsString : String {
       get {
-        switch unit {
+        switch units {
         case .metric:
           return String(format: "%.2f", value)
         case .imperial:
@@ -90,11 +90,11 @@ enum MeasurementParameter: Int {
     
     var unitsAsInt : Int {
       get {
-        return (unit.rawValue)
+        return (units.rawValue)
       }
       set {
-        if let newUnits = UnitSystem(rawValue: newValue), newUnits != unit {
-          unit = newUnits
+        if let newUnits = UnitSystem(rawValue: newValue), newUnits != units {
+          units = newUnits
           convertValueToCurrentUnits()
         }
       }
