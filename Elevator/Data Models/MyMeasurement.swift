@@ -15,22 +15,33 @@ enum MeasurementParameter: Int {
   
 }
 
-  struct Measurement {
+  struct MyMeasurement {
+    
+    // MARK: - Public properties
+    
     var value: Double = 0.0
-    var unitSystem: UnitSystem = .metric {
+    var unit: UnitSystem = .metric {
       willSet {
-        previousUnitSystem = unitSystem
+        previousUnitSystem = unit
       }
     }
     var parameter: MeasurementParameter
+    
+    // MARK: - Private properties
     
     private var previousUnitSystem: UnitSystem = .metric
     
     private let conversionFactorToMetric: Double
     
-    init(value: Double, units: UnitSystem, parameter: MeasurementParameter) {
+    // MARK: - Initializer
+    
+    init(of parameter: MeasurementParameter, value: Double, units: UnitSystem) {
+//      self.init(value: value, units: units, parameter: parameter)
+//    }
+    
+//    init(value: Double, units: UnitSystem, parameter: MeasurementParameter) {
       self.value = value
-      self.unitSystem = units
+      self.unit = units
       self.parameter = parameter
       
       switch parameter {
@@ -48,9 +59,11 @@ enum MeasurementParameter: Int {
       
     }
     
+    // MARK: - Public methods
+    
     mutating func convertValueToCurrentUnits() {
-      if unitSystem != previousUnitSystem {
-        switch unitSystem {
+      if unit != previousUnitSystem {
+        switch unit {
         case .metric:
           value = value * conversionFactorFpmToMps
         case .imperial:
@@ -61,7 +74,7 @@ enum MeasurementParameter: Int {
     
     var valueAsString : String {
       get {
-        switch unitSystem {
+        switch unit {
         case .metric:
           return String(format: "%.2f", value)
         case .imperial:
@@ -77,11 +90,11 @@ enum MeasurementParameter: Int {
     
     var unitsAsInt : Int {
       get {
-        return (unitSystem.rawValue)
+        return (unit.rawValue)
       }
       set {
-        if let newUnits = UnitSystem(rawValue: newValue), newUnits != unitSystem {
-          unitSystem = newUnits
+        if let newUnits = UnitSystem(rawValue: newValue), newUnits != unit {
+          unit = newUnits
           convertValueToCurrentUnits()
         }
       }

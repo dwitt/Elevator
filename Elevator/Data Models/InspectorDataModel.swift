@@ -16,7 +16,7 @@ struct Inspector {
   
   // Assist the inspector in determining what speed to use when checking the governor
   
-  func elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed elevatorRatedSpeed: Measurement, usingTabulatedSpeeds tabulatedEquivalentSpeeds: Bool, resultInUnits governorSpeedUnits: UnitSystem ) -> Measurement {
+  func elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed elevatorRatedSpeed: MyMeasurement, usingTabulatedSpeeds tabulatedEquivalentSpeeds: Bool, resultInUnits governorSpeedUnits: UnitSystem ) -> MyMeasurement {
     
     var ratedSpeed: Double
     
@@ -26,8 +26,8 @@ struct Inspector {
     
     // Start by converting the elevator speed to the correct units
 
-    if elevatorRatedSpeed.unitSystem != governorSpeedUnits {
-      // Convert the speed to the correct unitSystem
+    if elevatorRatedSpeed.unit != governorSpeedUnits {
+      // Convert the speed to the correct unit
       if governorSpeedUnits == .metric {
         ratedSpeed = elevatorRatedSpeed.value * conversionFactorFpmToMps
       } else {
@@ -42,7 +42,7 @@ struct Inspector {
     // Check if the inspector wants to use tabulated values
     if tabulatedEquivalentSpeeds {
       
-      // Check which unitSystem are selected so that we can use the correct tabulation
+      // Check which unit are selected so that we can use the correct tabulation
       
       if governorSpeedUnits == .metric {
         let speeds: [Double]  = [0.63, 0.75, 0.87, 1.00, 1.12, 1.25, 1.50, 1.75, 2.00, 2.25,
@@ -57,13 +57,13 @@ struct Inspector {
           
           // Check how far we are from the tabulated speeds. Within 2% means we can use the tabulated speeds.
           // At 2% the metric and imperial numbers will be considered the same as this is the just more than
-          // the actual difference between the unitSystem converted value and the table value
+          // the actual difference between the unit converted value and the table value
           
           if percentDeviation < 0.02 {
-            return Measurement(value: closest.element, units: governorSpeedUnits, parameter: .speed)
+            return MyMeasurement(of: .speed, value: closest.element, units: governorSpeedUnits)
           }
           
-          return Measurement(value: ratedSpeed, units: governorSpeedUnits, parameter: .speed)
+          return MyMeasurement(of: .speed, value: ratedSpeed, units: governorSpeedUnits)
         }
         
       } else {
@@ -79,16 +79,16 @@ struct Inspector {
           
           // Check how far we are from the tabulated speeds. Within 2% means we can use the tabulated speeds.
           // At 2% the metric and imperial numbers will be considered the same as this is the just more than
-          // the actual difference between the unitSystem converted value and the table value
+          // the actual difference between the unit converted value and the table value
           
           if percentDeviation < 0.02 {
-            return Measurement(value: closest.element, units: governorSpeedUnits, parameter: .speed)
+            return MyMeasurement(of: .speed, value: closest.element, units: governorSpeedUnits)
           }
           
-          return Measurement(value: ratedSpeed, units: governorSpeedUnits, parameter: .speed)
+          return MyMeasurement(of: .speed, value: ratedSpeed, units: governorSpeedUnits)
         }
       }
     }
-    return Measurement(value: ratedSpeed, units: governorSpeedUnits, parameter: .speed)
+    return MyMeasurement(of: .speed, value: ratedSpeed, units: governorSpeedUnits)
     }
 }

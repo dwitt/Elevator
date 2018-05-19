@@ -73,59 +73,59 @@ struct GovernorCodeRequirement {
  
   // MARK: - Public Properties
   
-  var elevatorRatedSpeed: Measurement = Measurement(value: 0.0, units: UnitSystem.metric, parameter: .speed)
+  var elevatorRatedSpeed: MyMeasurement = MyMeasurement(of: .speed, value: 0.0, units: UnitSystem.metric)
   var staticControl: Bool = false
   var speedReducingSwitch: Bool = false
-  var actualTrippingSpeed: Measurement = Measurement(value: 0.0, units: UnitSystem.metric, parameter: .speed)
+  var actualTrippingSpeed: MyMeasurement = MyMeasurement(of: .speed, value: 0.0, units: UnitSystem.metric)
   
   // MARK: - Public Computed Properties
   
-  var maximumTrippingSpeed: Measurement {
+  var maximumTrippingSpeed: MyMeasurement {
 
-    if elevatorRatedSpeed.value <= ratedSpeedThresholdForGovernorTripping.lowSpeed.inUnits(elevatorRatedSpeed.unitSystem) {
+    if elevatorRatedSpeed.value <= ratedSpeedThresholdForGovernorTripping.lowSpeed.inUnits(elevatorRatedSpeed.unit) {
       return lowGovernorTrippingSpeed(forSpeed: elevatorRatedSpeed)
     }
     
-    if elevatorRatedSpeed.value > ratedSpeedThresholdForGovernorTripping.highSpeed.inUnits(elevatorRatedSpeed.unitSystem) {
+    if elevatorRatedSpeed.value > ratedSpeedThresholdForGovernorTripping.highSpeed.inUnits(elevatorRatedSpeed.unit) {
       return highGovernorTrippingSpeed(forSpeed: elevatorRatedSpeed)
     }
     return tabulatedGovernorTrippingSpeed(forSpeed: elevatorRatedSpeed)
   }
   
-  var minimumTrippingSpeed: Measurement {
+  var minimumTrippingSpeed: MyMeasurement {
 
-    return Measurement(value: elevatorRatedSpeed.value * 1.15, units: elevatorRatedSpeed.unitSystem, parameter: .speed)
+    return MyMeasurement(of: .speed, value: elevatorRatedSpeed.value * 1.15, units: elevatorRatedSpeed.unit)
   }
   
-  var overSpeedSwitchTrippingSpeed: Measurement {
+  var overSpeedSwitchTrippingSpeed: MyMeasurement {
     
     if speedReducingSwitch {
-      return(Measurement(value: actualTrippingSpeed.value * 1.0, units: actualTrippingSpeed.unitSystem, parameter: .speed))
+      return(MyMeasurement(of: .speed, value: actualTrippingSpeed.value * 1.0, units: actualTrippingSpeed.unit))
     
     } else if staticControl {
-      return(Measurement(value: actualTrippingSpeed.value * 0.9, units: actualTrippingSpeed.unitSystem, parameter: .speed))
+      return(MyMeasurement(of: .speed, value: actualTrippingSpeed.value * 0.9, units: actualTrippingSpeed.unit))
       
-    } else if elevatorRatedSpeed.value <= ratedSpeedThresholdForGovernorSwitches.lowSpeed.inUnits(elevatorRatedSpeed.unitSystem) {
-      return(Measurement(value: actualTrippingSpeed.value * 1.0, units: actualTrippingSpeed.unitSystem, parameter: .speed))
+    } else if elevatorRatedSpeed.value <= ratedSpeedThresholdForGovernorSwitches.lowSpeed.inUnits(elevatorRatedSpeed.unit) {
+      return(MyMeasurement(of: .speed, value: actualTrippingSpeed.value * 1.0, units: actualTrippingSpeed.unit))
     
-    } else if elevatorRatedSpeed.value > ratedSpeedThresholdForGovernorSwitches.highSpeed.inUnits(elevatorRatedSpeed.unitSystem) {
-      return(Measurement(value: actualTrippingSpeed.value * 0.95, units: actualTrippingSpeed.unitSystem, parameter: .speed))
+    } else if elevatorRatedSpeed.value > ratedSpeedThresholdForGovernorSwitches.highSpeed.inUnits(elevatorRatedSpeed.unit) {
+      return(MyMeasurement(of: .speed, value: actualTrippingSpeed.value * 0.95, units: actualTrippingSpeed.unit))
       
     } else {
-      return(Measurement(value: actualTrippingSpeed.value * 0.9, units: actualTrippingSpeed.unitSystem, parameter: .speed))
+      return(MyMeasurement(of: .speed, value: actualTrippingSpeed.value * 0.9, units: actualTrippingSpeed.unit))
     }
   }
   
-  var speedReducingSwitchTrippingSpeed: Measurement {
+  var speedReducingSwitchTrippingSpeed: MyMeasurement {
 
-    if elevatorRatedSpeed.value <= ratedSpeedThresholdForGovernorSwitches.lowSpeed.inUnits(elevatorRatedSpeed.unitSystem) {
-      return(Measurement(value: actualTrippingSpeed.value * 1.0, units: actualTrippingSpeed.unitSystem, parameter: .speed))
+    if elevatorRatedSpeed.value <= ratedSpeedThresholdForGovernorSwitches.lowSpeed.inUnits(elevatorRatedSpeed.unit) {
+      return(MyMeasurement(of: .speed, value: actualTrippingSpeed.value * 1.0, units: actualTrippingSpeed.unit))
       
-    } else if elevatorRatedSpeed.value > ratedSpeedThresholdForGovernorSwitches.highSpeed.inUnits(elevatorRatedSpeed.unitSystem) {
-      return(Measurement(value: actualTrippingSpeed.value * 0.95, units: actualTrippingSpeed.unitSystem, parameter: .speed))
+    } else if elevatorRatedSpeed.value > ratedSpeedThresholdForGovernorSwitches.highSpeed.inUnits(elevatorRatedSpeed.unit) {
+      return(MyMeasurement(of: .speed, value: actualTrippingSpeed.value * 0.95, units: actualTrippingSpeed.unit))
       
     } else {
-      return(Measurement(value: actualTrippingSpeed.value * 0.9, units: actualTrippingSpeed.unitSystem, parameter: .speed))
+      return(MyMeasurement(of: .speed, value: actualTrippingSpeed.value * 0.9, units: actualTrippingSpeed.unit))
       
     }
   }
@@ -163,47 +163,47 @@ struct GovernorCodeRequirement {
   // Function to return the maximum governor tripping speed when the rated speed is equal
   // to or below the lowest speed in the table
   
-  private func lowGovernorTrippingSpeed(forSpeed ratedSpeed: Measurement) -> Measurement {
+  private func lowGovernorTrippingSpeed(forSpeed ratedSpeed: MyMeasurement) -> MyMeasurement {
     
-    let units = ratedSpeed.unitSystem
+    let units = ratedSpeed.unit
     
     if units == .metric {
-      return Measurement(value: 0.90, units: .metric, parameter: .speed)
+      return MyMeasurement(of: .speed, value: 0.90, units: .metric)
     } else {
-      return Measurement(value: 125.0, units: .imperial, parameter: .speed)
+      return MyMeasurement(of: .speed, value: 125.0, units: .imperial)
     }
   }
   
   // Function to return the maximum governor tripping speed when the rated speed is above
   // the highest speed in the table
   
-  private func highGovernorTrippingSpeed(forSpeed ratedSpeed: Measurement) -> Measurement {
+  private func highGovernorTrippingSpeed(forSpeed ratedSpeed: MyMeasurement) -> MyMeasurement {
     
-    let units = ratedSpeed.unitSystem
+    let units = ratedSpeed.unit
     let speed = ratedSpeed.value
     
     if units == .metric {
-      return Measurement(value: (speed * 1.20), units: .metric, parameter: .speed)
+      return MyMeasurement(of: .speed, value: (speed * 1.20), units: .metric)
     } else {
-      return Measurement(value: (speed * 1.20), units: .imperial, parameter: .speed)
+      return MyMeasurement(of: .speed, value: (speed * 1.20), units: .imperial)
     }
   }
   
   // Function to return the maximum governor tripping speed when the rated speed is in
   // the range of the tablulated values
   
-  private func tabulatedGovernorTrippingSpeed(forSpeed ratedSpeed: Measurement) -> Measurement {
+  private func tabulatedGovernorTrippingSpeed(forSpeed ratedSpeed: MyMeasurement) -> MyMeasurement {
     
-    let units = ratedSpeed.unitSystem
+    let units = ratedSpeed.unit
     let speedKey = ratedSpeed.toGovernorTrippingSpeedKey()
     
     if units == .metric {
       if let tabulatedSpeed = metricTabulatedTrippingSpeed[speedKey] {
-        return Measurement(value: Double(tabulatedSpeed)/100.0, units: .metric, parameter: .speed)
+        return MyMeasurement(of: .speed, value: Double(tabulatedSpeed)/100.0, units: .metric)
       }
     } else if units == .imperial {
       if let tabulatedSpeed = imperialTabulatedTrippingSpeed[speedKey] {
-        return Measurement(value: Double(tabulatedSpeed), units: .imperial, parameter: .speed)
+        return MyMeasurement(of: .speed, value: Double(tabulatedSpeed), units: .imperial)
       }
     }
     
@@ -214,9 +214,9 @@ struct GovernorCodeRequirement {
   // Function to return an interpolated value for the maximum governor tripping speed
   // when the rated speed is in range of the tabulated values
   
-  private func interpolatedGovernorTrippingSpeed(forSpeed ratedSpeed: Measurement) -> Measurement {
+  private func interpolatedGovernorTrippingSpeed(forSpeed ratedSpeed: MyMeasurement) -> MyMeasurement {
     
-    let units = ratedSpeed.unitSystem
+    let units = ratedSpeed.unit
     let speedKey = ratedSpeed.toGovernorTrippingSpeedKey()
     var maxTrippingSpeed: Double!
     var tabulatedTrippingSpeed: [Int : Int]!
@@ -240,19 +240,19 @@ struct GovernorCodeRequirement {
     }
     
     if units == .metric {
-      return(Measurement(value: maxTrippingSpeed/100, units: units, parameter: .speed))
+      return(MyMeasurement(of: .speed, value: maxTrippingSpeed/100, units: units))
     } else {
-      return(Measurement(value: maxTrippingSpeed/100, units: units, parameter: .speed))
+      return(MyMeasurement(of: .speed, value: maxTrippingSpeed/100, units: units))
     }
   }
   
 }
 
 
-  extension Measurement {
+  extension MyMeasurement {
     
     func toGovernorTrippingSpeedKey() -> Int {
-      if unitSystem == .metric {
+      if unit == .metric {
         return Int(100 * value)
       } else {
         return Int(value)

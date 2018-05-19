@@ -16,7 +16,7 @@ class ElevatorTests: XCTestCase {
   override func setUp() {
     super.setUp()
     
-    elevator = Elevator(ratedSpeed: Measurement(value: 0.5, units: .metric), capacity: 1134, governorSpeedReducingSwitch: false, staticControl: false)
+    elevator = Elevator(ratedSpeed: MyMeasurement(of: .speed,value: 0.5, units: .metric), capacity: 1134, governorSpeedReducingSwitch: false, staticControl: false)
   }
   
   override func tearDown() {
@@ -26,7 +26,7 @@ class ElevatorTests: XCTestCase {
   func testInit_Speed() {
 
     XCTAssertEqual(elevator.ratedSpeed.value, 0.5)
-    XCTAssertEqual(elevator.ratedSpeed.unitS, .metric)
+    XCTAssertEqual(elevator.ratedSpeed.unit, .metric)
     
   }
   func testInit_Capacity() {
@@ -46,7 +46,7 @@ class ElevatorTests: XCTestCase {
   func testInit_GovernorTrippingSpeed() {
     
     XCTAssertEqual(elevator.governorTrippingSpeed.value, 0.0)
-    XCTAssertEqual(elevator.governorTrippingSpeed.units, elevator.ratedSpeed.units)
+    XCTAssertEqual(elevator.governorTrippingSpeed.unitSystem, elevator.ratedSpeed.units)
   }
   
 }

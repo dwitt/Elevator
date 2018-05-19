@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   private func createElevatorModel() -> Elevator {
-    let elevator = Elevator(ratedSpeed: Measurement(value: 0.5, units: .metric, parameter: .speed), capacity: 1361, governorSpeedReducingSwitch: false, staticControl: true)
+    let elevator = Elevator(ratedSpeed: MyMeasurement(of: .speed, value: 0.5, units: .metric), capacity: 1361, governorSpeedReducingSwitch: false, staticControl: true)
     return elevator
   }
 

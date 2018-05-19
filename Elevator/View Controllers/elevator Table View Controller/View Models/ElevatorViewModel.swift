@@ -12,14 +12,19 @@ struct ElevatorViewModel {
   
   // The viewModel owns the data Model(s)
   
-  // MARK: - Properties
+  // MARK: - Private properties
   
   private var elevator: Elevator
+  private var formatter: NumberFormatter
   
-  // viewModel variables
+  // MARK: Public properties
   
   var ratedSpeed: String {
     get {
+      formatter.numberStyle = .decimal
+      
+      
+      
       return elevator.ratedSpeed.valueAsString
     }
     set(speed) {
@@ -32,11 +37,11 @@ struct ElevatorViewModel {
   
   var ratedSpeedUnits: Int {
     get {
-      return elevator.ratedSpeed.unitSystem.rawValue
+      return elevator.ratedSpeed.unit.rawValue
     }
     set(units) {
-      if let ratedSpeedUnits = UnitSystem(rawValue: units), elevator.ratedSpeed.unitSystem != ratedSpeedUnits {
-        elevator.ratedSpeed.unitSystem = ratedSpeedUnits
+      if let ratedSpeedUnits = UnitSystem(rawValue: units), elevator.ratedSpeed.unit != ratedSpeedUnits {
+        elevator.ratedSpeed.unit = ratedSpeedUnits
         elevator.ratedSpeed.convertValueToCurrentUnits()
       }
     }
@@ -55,11 +60,11 @@ struct ElevatorViewModel {
   
   var governorTrippingSpeedUnits: Int {
     get {
-      return elevator.governorTrippingSpeed.unitSystem.rawValue
+      return elevator.governorTrippingSpeed.unit.rawValue
     }
     set(units) {
-      if let governorTrippingSpeedUnits = UnitSystem(rawValue: units), elevator.governorTrippingSpeed.unitSystem != governorTrippingSpeedUnits {
-        elevator.governorTrippingSpeed.unitSystem = governorTrippingSpeedUnits
+      if let governorTrippingSpeedUnits = UnitSystem(rawValue: units), elevator.governorTrippingSpeed.unit != governorTrippingSpeedUnits {
+        elevator.governorTrippingSpeed.unit = governorTrippingSpeedUnits
         elevator.governorTrippingSpeed.convertValueToCurrentUnits()
       }
     }
@@ -69,6 +74,7 @@ struct ElevatorViewModel {
   
   init(_ elevator: Elevator) {
     self.elevator = elevator
+    self.formatter = NumberFormatter()
   }
   
   // MARK: - Public Interface
