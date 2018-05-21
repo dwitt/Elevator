@@ -37,12 +37,17 @@ struct ElevatorViewModel {
   
   var ratedSpeedUnits: Int {
     get {
-      return elevator.ratedSpeed.units.rawValue
+      return elevator.ratedSpeed.unitSystem.rawValue
     }
-    set(units) {
-      if let ratedSpeedUnits = UnitSystem(rawValue: units), elevator.ratedSpeed.units != ratedSpeedUnits {
-        elevator.ratedSpeed.units = ratedSpeedUnits
-        elevator.ratedSpeed.convertValueToCurrentUnits()
+    set(unitSystem) {
+      if let ratedSpeedUnits: UnitSystem = UnitSystem(rawValue: unitSystem), elevator.ratedSpeed.unitSystem != ratedSpeedUnits {
+        
+        elevator.ratedSpeed.convert(to: ratedSpeedUnits)
+        
+        
+        
+ //       elevator.ratedSpeed.units = ratedSpeedUnits
+ //       elevator.ratedSpeed.convertValueToCurrentUnits()
       }
     }
   }

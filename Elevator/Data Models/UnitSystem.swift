@@ -11,5 +11,6 @@ import Foundation
 enum UnitSystem: Int {
   case metric = 0
   case imperial = 1
+  case unknown = 2
     
 }

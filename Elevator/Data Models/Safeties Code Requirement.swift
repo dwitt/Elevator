@@ -139,6 +139,9 @@ struct SafetiesCodeRequirement {
       return typeBStoppingDistancesForSpeedInCmps
     case .imperial:
       return typeBStoppingDistancesForSpeedInFpm
+    // TODO: add throw an error
+    default:
+      return [0:[0,0]]
     }
   }
   
@@ -176,6 +179,9 @@ struct SafetiesCodeRequirement {
       return 380
     case .imperial:
       return 15
+    // TODO: add throw an error
+    default:
+      return 0
     }
   }
   
@@ -186,6 +192,9 @@ struct SafetiesCodeRequirement {
       return 25
     case .imperial:
       return 1
+    // TODO: add throw an error
+    default:
+      return 0
     }
   }
   
@@ -206,6 +215,9 @@ struct SafetiesCodeRequirement {
       return Int((pow(speed.value,2.0) / 6.870 + 0.256) * 1000.0)
     case .imperial:
       return Int((pow(speed.value,2.0) / 81144.0 + 0.84) * 12.0)
+    // TODO: add throw an error
+    default:
+      return 0
     }
   }
   
@@ -216,6 +228,9 @@ struct SafetiesCodeRequirement {
       return Int((pow(speed.value,2.0) / 19.63) * 1000.0)
     case .imperial:
       return Int((pow(speed.value,2.0) / 231840.0) * 12.0)
+    // TODO: add throw an error
+    default:
+      return 0
     }
   }
   

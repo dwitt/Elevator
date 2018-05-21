@@ -114,7 +114,7 @@ struct GovernorInspectionViewModel {
     
     // MARK: Initialze the View Model Properties
     
-    elevatorRatedSpeedForGovernorSetting = elevator.ratedSpeed
+    elevatorRatedSpeedForGovernorSetting = elevator.ratedSpeed.convertToMyMeasurement()
     
     tabulatedEquivalentSpeeds = true
     

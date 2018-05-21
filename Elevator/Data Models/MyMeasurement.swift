@@ -68,6 +68,8 @@ enum MeasurementParameter: Int {
           value = value * conversionFactorFpmToMps
         case .imperial:
           value = value / conversionFactorFpmToMps
+        default:
+          break
         }
       }
     }
@@ -79,6 +81,8 @@ enum MeasurementParameter: Int {
           return String(format: "%.2f", value)
         case .imperial:
           return String(format: "%.0f", value)
+        default:
+          return String(value)
         }
       }
       set {

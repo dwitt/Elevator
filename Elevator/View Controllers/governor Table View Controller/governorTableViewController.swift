@@ -115,7 +115,7 @@ class governorTableViewController: UITableViewController {
   private func updateGovernorInspectionViewWith(viewModel: GovernorInspectionViewModel) {
     
     ratedSpeedLabel.text = viewModel.elevatorRatedSpeed.valueAsString
-    ratedSpeedUnitsSegmentControl.selectedSegmentIndex = viewModel.elevatorRatedSpeed.unitsAsInt
+    ratedSpeedUnitsSegmentControl.selectedSegmentIndex = viewModel.elevatorRatedSpeed.unitSystem.rawValue
     
     ratedSpeedForGovernorLabel.text = viewModel.elevatorRatedSpeedForGovernorSetting.valueAsString
     ratedSpeedUnitsForGovernorSegmentControl.selectedSegmentIndex = viewModel.elevatorRatedSpeedForGovernorSetting.unitsAsInt

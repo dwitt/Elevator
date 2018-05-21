@@ -44,7 +44,7 @@ class SpeedTests: XCTestCase {
   }
   
   func testConvertToCurrentUnits_fromMetric() {
-    metricSpeed.unit = .imperial
+    metricSpeed.units = .imperial
     metricSpeed.convertValueToCurrentUnits()
     
     let conversionResult = 0.5/0.00508
@@ -53,7 +53,7 @@ class SpeedTests: XCTestCase {
   }
   
   func testConvertToCurrentUnits_fromImperial() {
-    imperialSpeed.unit = .metric
+    imperialSpeed.units = .metric
     imperialSpeed.convertValueToCurrentUnits()
     
     let conversionResult = 100 * 0.00508
