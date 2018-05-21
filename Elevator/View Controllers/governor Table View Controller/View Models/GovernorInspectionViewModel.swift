@@ -50,7 +50,7 @@ struct GovernorInspectionViewModel {
     }
   }
   
-  var elevatorRatedSpeed: MyMeasurement {
+  var elevatorRatedSpeed: Measurement<UnitSpeed> {
     get {
       return elevator.ratedSpeed
     }
@@ -99,7 +99,7 @@ struct GovernorInspectionViewModel {
     //elevator.governorTrippingSpeed.unit = elevator.ratedSpeed.unit
     //elevator.governorTrippingSpeed.convertValueToCurrentUnits()
     
-    elevatorRatedSpeedForGovernorSetting = elevator.ratedSpeed
+    elevatorRatedSpeedForGovernorSetting = elevator.ratedSpeed.convertToMyMeasurement()
     
     // TODO: - adjust all of the unit to match the rated MyMeasurement
     // elevator.governorTrippingSpeed

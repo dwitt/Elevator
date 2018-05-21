@@ -10,8 +10,9 @@
 		630CBE4F205DCBDA00197347 /* MyMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CBE4E205DCBDA00197347 /* MyMeasurement.swift */; };
 		6318053B204D79EE0063D9ED /* ElevatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318053A204D79EE0063D9ED /* ElevatorViewModel.swift */; };
 		6318053D204D7B140063D9ED /* elevatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318053C204D7B140063D9ED /* elevatorTableViewController.swift */; };
-		6339ADA320ADE2DA000DCE83 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6339ADA220ADE2DA000DCE83 /* Dimension.swift */; };
+		6339ADA320ADE2DA000DCE83 /* UnitSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6339ADA220ADE2DA000DCE83 /* UnitSpeed.swift */; };
 		63512794209A7C0500C4AE0E /* TypeBSafetyInspectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63512793209A7C0500C4AE0E /* TypeBSafetyInspectionTableViewController.swift */; };
+		635488D220B22DDD005497DE /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635488D120B22DDD005497DE /* Measurement.swift */; };
 		6377BF40207107050028DD1E /* ElevatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377BF3F207107050028DD1E /* ElevatorTests.swift */; };
 		6377BF42207147AF0028DD1E /* SpeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377BF41207147AF0028DD1E /* SpeedTests.swift */; };
 		6377BF44207147FA0028DD1E /* UnitSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377BF43207147FA0028DD1E /* UnitSystem.swift */; };
@@ -49,8 +50,9 @@
 		630CBE4E205DCBDA00197347 /* MyMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMeasurement.swift; sourceTree = "<group>"; };
 		6318053A204D79EE0063D9ED /* ElevatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorViewModel.swift; sourceTree = "<group>"; };
 		6318053C204D7B140063D9ED /* elevatorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = elevatorTableViewController.swift; sourceTree = "<group>"; };
-		6339ADA220ADE2DA000DCE83 /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
+		6339ADA220ADE2DA000DCE83 /* UnitSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSpeed.swift; sourceTree = "<group>"; };
 		63512793209A7C0500C4AE0E /* TypeBSafetyInspectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeBSafetyInspectionTableViewController.swift; sourceTree = "<group>"; };
+		635488D120B22DDD005497DE /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		6377BF31207100280028DD1E /* ElevatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElevatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6377BF35207100280028DD1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6377BF3F207107050028DD1E /* ElevatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorTests.swift; sourceTree = "<group>"; };
@@ -254,7 +256,8 @@
 			children = (
 				63CE18042061571A00318C69 /* String.swift */,
 				63CE180620616B6A00318C69 /* UITextField.swift */,
-				6339ADA220ADE2DA000DCE83 /* Dimension.swift */,
+				6339ADA220ADE2DA000DCE83 /* UnitSpeed.swift */,
+				635488D120B22DDD005497DE /* Measurement.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -401,7 +404,7 @@
 			files = (
 				6377BF4620714CC20028DD1E /* Safeties Code Requirement.swift in Sources */,
 				6318053B204D79EE0063D9ED /* ElevatorViewModel.swift in Sources */,
-				6339ADA320ADE2DA000DCE83 /* Dimension.swift in Sources */,
+				6339ADA320ADE2DA000DCE83 /* UnitSpeed.swift in Sources */,
 				63CE18052061571A00318C69 /* String.swift in Sources */,
 				63CE18092062C4B500318C69 /* TextFieldDelegateForDecimalInput.swift in Sources */,
 				638B159F20A1FA21009DCF90 /* TypeBSafetyInspectionViewModel.swift in Sources */,
@@ -416,6 +419,7 @@
 				63512794209A7C0500C4AE0E /* TypeBSafetyInspectionTableViewController.swift in Sources */,
 				63F97AE5202DEC35006F187D /* ElevatorCode.swift in Sources */,
 				6318053D204D7B140063D9ED /* elevatorTableViewController.swift in Sources */,
+				635488D220B22DDD005497DE /* Measurement.swift in Sources */,
 				63CE180720616B6A00318C69 /* UITextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

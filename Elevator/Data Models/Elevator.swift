@@ -11,14 +11,14 @@ import Foundation
 let conversionFactorFpmToMps: Double = 0.00508
 
 class Elevator {
-  var ratedSpeed: Measurement<Unit>
+  var ratedSpeed: Measurement<UnitSpeed>
   var capacity: Double
   var governorSpeedReducingSwitch: Bool
   var staticControl: Bool
   var governorTrippingSpeed: MyMeasurement
 
   
-  init(ratedSpeed: Measurement<Unit>, capacity: Double, governorSpeedReducingSwitch: Bool, staticControl: Bool) {
+  init(ratedSpeed: Measurement<UnitSpeed>, capacity: Double, governorSpeedReducingSwitch: Bool, staticControl: Bool) {
     self.ratedSpeed = ratedSpeed
     self.capacity = capacity
     self.governorSpeedReducingSwitch = governorSpeedReducingSwitch

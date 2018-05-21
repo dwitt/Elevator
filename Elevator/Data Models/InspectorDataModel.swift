@@ -16,7 +16,7 @@ struct Inspector {
   
   // Assist the inspector in determining what speed to use when checking the governor
   
-  func elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed elevatorRatedSpeed: MyMeasurement, usingTabulatedSpeeds tabulatedEquivalentSpeeds: Bool, resultInUnits governorSpeedUnits: UnitSystem ) -> MyMeasurement {
+  func elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed elevatorRatedSpeed: Measurement<Unit>, usingTabulatedSpeeds tabulatedEquivalentSpeeds: Bool, resultInUnits governorSpeedUnits: UnitSystem ) -> MyMeasurement {
     
     var ratedSpeed: Double
     
@@ -26,6 +26,8 @@ struct Inspector {
     
     // Start by converting the elevator speed to the correct units
 
+    // TODO: - need to have a conversion function from a Dimension to my UnitSystem
+    
     if elevatorRatedSpeed.units != governorSpeedUnits {
       // Convert the speed to the correct units
       if governorSpeedUnits == .metric {
