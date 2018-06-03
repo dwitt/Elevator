@@ -15,7 +15,7 @@ class Elevator {
   var capacity: Double
   var governorSpeedReducingSwitch: Bool
   var staticControl: Bool
-  var governorTrippingSpeed: MyMeasurement
+  var governorTrippingSpeed: Measurement<UnitSpeed>
 
   
   init(ratedSpeed: Measurement<UnitSpeed>, capacity: Double, governorSpeedReducingSwitch: Bool, staticControl: Bool) {
@@ -24,24 +24,9 @@ class Elevator {
     self.governorSpeedReducingSwitch = governorSpeedReducingSwitch
     self.staticControl = staticControl
     
-    // self.governorTrippingSpeed = Measurement(value: 0.0, unit: ratedSpeed.unit)
+    self.governorTrippingSpeed = Measurement(value: 0.0, unit: ratedSpeed.unit)
     
-    // TODO: - Temporary fix for units
-    //         Until the governor units are changed
-    var governorUnits: UnitSystem
-    
-    let ratedSpeedUnit = ratedSpeed.unit
-    switch ratedSpeedUnit {
-    case UnitSpeed.metersPerSecond:
-      governorUnits = UnitSystem.metric
-    case UnitSpeed.feetPerMinute:
-      governorUnits = UnitSystem.imperial
-    default:
-      governorUnits = UnitSystem.metric
-    }
-    // MARK: -
-    
-    governorTrippingSpeed = MyMeasurement(of: .speed, value: 0, units: governorUnits)
+
   }
   
   

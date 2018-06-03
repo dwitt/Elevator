@@ -46,7 +46,7 @@ class ElevatorTests: XCTestCase {
   func testInit_GovernorTrippingSpeed() {
     
     XCTAssertEqual(elevator.governorTrippingSpeed.value, 0.0)
-    XCTAssertEqual(elevator.governorTrippingSpeed.units, elevator.ratedSpeed.unitSystem)
+    XCTAssertEqual(elevator.governorTrippingSpeed.unit, elevator.ratedSpeed.unit)
   }
   
 }

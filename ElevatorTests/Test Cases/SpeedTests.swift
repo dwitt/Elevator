@@ -11,14 +11,14 @@ import XCTest
 
 class SpeedTests: XCTestCase {
   
-  var metricSpeed: MyMeasurement!
-  var imperialSpeed: MyMeasurement!
+  var metricSpeed: Measurement<UnitSpeed>!
+  var imperialSpeed: Measurement<UnitSpeed>!
   
   override func setUp() {
     super.setUp()
     
-    metricSpeed = MyMeasurement(of: .speed, value: 0.5, units: .metric)
-    imperialSpeed = MyMeasurement(of: .speed, value: 100, units: .imperial)
+    metricSpeed = Measurement(value: 0.5, unit: UnitSystem.metric.speed)
+    imperialSpeed = Measurement(value: 100, unit: UnitSystem.imperial.speed)
     
     
   }
@@ -36,16 +36,15 @@ class SpeedTests: XCTestCase {
   }
   
   func testUnitsAsInt_metric() {
-    XCTAssertEqual(metricSpeed.unitsAsInt, 0)
+    XCTAssertEqual(metricSpeed.unitSystem, UnitSystem(rawValue: 0))
   }
   
   func testUnitsAsInt_imperial() {
-    XCTAssertEqual(imperialSpeed.unitsAsInt, 1)
+    XCTAssertEqual(imperialSpeed.unitSystem, UnitSystem(rawValue: 1))
   }
   
   func testConvertToCurrentUnits_fromMetric() {
-    metricSpeed.units = .imperial
-    metricSpeed.convertValueToCurrentUnits()
+    metricSpeed.convert(to: UnitSystem.imperial)
     
     let conversionResult = 0.5/0.00508
     
@@ -53,8 +52,7 @@ class SpeedTests: XCTestCase {
   }
   
   func testConvertToCurrentUnits_fromImperial() {
-    imperialSpeed.units = .metric
-    imperialSpeed.convertValueToCurrentUnits()
+    imperialSpeed.convert(to: UnitSystem.metric)
     
     let conversionResult = 100 * 0.00508
     

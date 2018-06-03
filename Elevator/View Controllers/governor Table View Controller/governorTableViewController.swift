@@ -50,6 +50,7 @@ class governorTableViewController: UITableViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
+    
     // Set the delegate of the ratedSpeedTextField so that we can detect return and dismiss the keyboard when required
     
     actualGovernorTrippingSpeedTextField.delegate = textFieldDelegateForDecimalInput
@@ -118,28 +119,28 @@ class governorTableViewController: UITableViewController {
     ratedSpeedUnitsSegmentControl.selectedSegmentIndex = viewModel.elevatorRatedSpeed.unitSystem.rawValue
     
     ratedSpeedForGovernorLabel.text = viewModel.elevatorRatedSpeedForGovernorSetting.valueAsString
-    ratedSpeedUnitsForGovernorSegmentControl.selectedSegmentIndex = viewModel.elevatorRatedSpeedForGovernorSetting.unitsAsInt
+    ratedSpeedUnitsForGovernorSegmentControl.selectedSegmentIndex = viewModel.elevatorRatedSpeedForGovernorSetting.unitSystem.rawValue
     
     TabulatedEquivalentSpeeds.isOn = viewModel.tabulatedEquivalentSpeeds
     
     actualGovernorTrippingSpeedTextField.text = viewModel.governorTrippingSpeed.valueAsString
-    actualGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex = viewModel.governorTrippingSpeed.unitsAsInt
+    actualGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex = viewModel.governorTrippingSpeed.unitSystem.rawValue
     
     staticControlSwitch.isOn = viewModel.staticControl
     
     speedReducingSwitch.isOn = viewModel.speedReducingSwitch
     
     maxGovernorTrippingSpeedLabel.text = viewModel.governorMaximumTrippingSpeed.valueAsString
-    maxGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex = viewModel.governorMaximumTrippingSpeed.unitsAsInt
+    maxGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex = viewModel.governorMaximumTrippingSpeed.unitSystem.rawValue
     
     minGovernorTrippingSpeedLabel.text = viewModel.governorMinimumTrippingSpeed.valueAsString
-    minGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex = viewModel.governorMinimumTrippingSpeed.unitsAsInt
+    minGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex = viewModel.governorMinimumTrippingSpeed.unitSystem.rawValue
     
     overspeedSwitchSpeedLabel.text = viewModel.governorOverspeedSwitchMaximumTrippingSpeed.valueAsString
-    overspeedSwitchSpeedUnitsSegmentControl.selectedSegmentIndex = viewModel.governorOverspeedSwitchMaximumTrippingSpeed.unitsAsInt
+    overspeedSwitchSpeedUnitsSegmentControl.selectedSegmentIndex = viewModel.governorOverspeedSwitchMaximumTrippingSpeed.unitSystem.rawValue
     
     speedReducingSwitchSpeedLabel.text = viewModel.governorSpeedReducingSwitchMaximumTrippingSpeed.valueAsStringWhen(conditionIsFalse: speedReducingSwitch.isOn)
-    speedReducingSwitchSpeedUnitsSegmentControl.selectedSegmentIndex = viewModel.governorSpeedReducingSwitchMaximumTrippingSpeed.unitsAsInt
+    speedReducingSwitchSpeedUnitsSegmentControl.selectedSegmentIndex = viewModel.governorSpeedReducingSwitchMaximumTrippingSpeed.unitSystem.rawValue
     
   }
   
@@ -162,19 +163,18 @@ class governorTableViewController: UITableViewController {
       }
     }
   }
+
   
   //MARK: - Recieve Messages from View
   
-  
   @IBAction func ratedSpeedForGovernorUnitsChanged() {
     // called when the units for the rated speed for governor units changes
-    // TODO: - remove extra comments
-    
-    // update the view model with the new speed units
-    
+
     saveGovernorTrippingSpeedText()
-    viewModel?.elevatorRatedSpeedForGovernorSetting.unitsAsInt = ratedSpeedUnitsForGovernorSegmentControl.selectedSegmentIndex
     
+    if let unit = UnitSystem(rawValue: ratedSpeedUnitsForGovernorSegmentControl.selectedSegmentIndex)?.speed {
+      viewModel?.elevatorRatedSpeedForGovernorSetting.convert(to: unit)
+    }
     updateView()
   }
   
@@ -191,11 +191,31 @@ class governorTableViewController: UITableViewController {
     }
   }
   
+  // User changes the speed units segment control
+  
+
+  // We have two options
+  // If we are currently editing the speed value then the units change
+  //    should not affect the value as we are setting a value and units simultaneously
+  // If we are not currently editing the speed value then we need to peforma conversion
+  
   @IBAction func actualGovernorTrippingSpeedUnitsChanged() {
-    viewModel?.governorTrippingSpeed.unitsAsInt = actualGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex
-    if !actualGovernorTrippingSpeedTextField.isEditing {
+    if actualGovernorTrippingSpeedTextField.isEditing {     
+      // TODO: - Fix the forced unwarp !!!
+      if let selectedUnitSystem = UnitSystem(rawValue : actualGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex) {
+        viewModel?.governorTrippingSpeed = Measurement(value: actualGovernorTrippingSpeedTextField.text, unitSystem: selectedUnitSystem)
+        updateView()
+      }
+    } else {
+      viewModel?.governorTrippingSpeed.convert(to: UnitSystem(rawValue: actualGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex)!)
       updateView()
     }
+    
+    
+    //viewModel?.governorTrippingSpeed.unitsAsInt = actualGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex
+    //if !actualGovernorTrippingSpeedTextField.isEditing {
+    //  updateView()
+    //}
   }
   
   @IBAction func staticControlSwitchChanged() {
@@ -212,25 +232,34 @@ class governorTableViewController: UITableViewController {
   
   @IBAction func maxGovernorTrippingSpeedUnitsChanged() {
     saveGovernorTrippingSpeedText()
-    viewModel?.governorMaximumTrippingSpeed.unitsAsInt = maxGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex
+    if let unit = UnitSystem(rawValue: maxGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex)?.speed {
+      viewModel?.governorMaximumTrippingSpeed.convert(to: unit)
+    }
     updateView()
   }
   
   @IBAction func minGovernorTrippingSpeedUnitsChanged() {
     saveGovernorTrippingSpeedText()
-    viewModel?.governorMinimumTrippingSpeed.unitsAsInt = minGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex
+    if let unit = UnitSystem(rawValue: minGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex)?.speed {
+      viewModel?.governorMinimumTrippingSpeed.convert(to: unit)
+    }
     updateView()
   }
   
   @IBAction func overspeedSwitchSpeedUnitsChanged() {
     saveGovernorTrippingSpeedText()
-    viewModel?.governorOverspeedSwitchMaximumTrippingSpeed.unitsAsInt = overspeedSwitchSpeedUnitsSegmentControl.selectedSegmentIndex
+    if let unit = UnitSystem(rawValue: overspeedSwitchSpeedUnitsSegmentControl.selectedSegmentIndex)?.speed {
+      viewModel?.governorOverspeedSwitchMaximumTrippingSpeed.convert(to: unit)
+    }
     updateView()
   }
   
   @IBAction func speedReducingSwitchSpeedUnitsChanged() {
     saveGovernorTrippingSpeedText()
-    viewModel?.governorSpeedReducingSwitchMaximumTrippingSpeed.unitsAsInt = speedReducingSwitchSpeedUnitsSegmentControl.selectedSegmentIndex
+    if let unit = UnitSystem(rawValue: speedReducingSwitchSpeedUnitsSegmentControl.selectedSegmentIndex)?.speed {
+      viewModel?.governorSpeedReducingSwitchMaximumTrippingSpeed.convert(to: unit)
+    }
+    
     updateView()
   }
   
@@ -324,7 +353,7 @@ extension governorTableViewController: UITextViewDelegate {
   
 }
 
-extension MyMeasurement {
+extension Measurement where UnitType: UnitSpeed {
   func valueAsStringWhen(conditionIsFalse : Bool) -> String {
     if !conditionIsFalse {
       return ( "---" )

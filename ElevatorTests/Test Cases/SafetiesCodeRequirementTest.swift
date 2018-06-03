@@ -30,32 +30,32 @@ class SafetiesCodeRequirementTest: XCTestCase {
   }
   
   func testStoppingDistance_atLowSpeed() {
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value:0.5,units:.metric)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value:1.0,units:.metric)
+    safeties!.governorTrippingSpeed = Measurement(value:0.5, unitSystem: .metric)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value:1.0, unitSystem: .metric)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = true
     var minimumStoppingDistnce = safeties!.minimumStoppingDistance
     var maximumStoppingDistnce = safeties!.maximumStoppingDistance
     XCTAssertEqual(minimumStoppingDistnce,25)
     XCTAssertEqual(maximumStoppingDistnce,380)
     
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value: 1.0, units: .metric)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value: 0.5, units: .metric)
+    safeties!.governorTrippingSpeed = Measurement(value: 1.0, unitSystem: .metric)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value: 0.5, unitSystem: .metric)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = false
     minimumStoppingDistnce = safeties!.minimumStoppingDistance
     maximumStoppingDistnce = safeties!.maximumStoppingDistance
     XCTAssertEqual(minimumStoppingDistnce, 25)
     XCTAssertEqual(maximumStoppingDistnce, 380)
     
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value:125, units:.imperial)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value: 200, units: .imperial)
+    safeties!.governorTrippingSpeed = Measurement(value:125, unitSystem: .imperial)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value: 200, unitSystem: .imperial)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = true
     minimumStoppingDistnce = safeties!.minimumStoppingDistance
     maximumStoppingDistnce = safeties!.maximumStoppingDistance
     XCTAssertEqual(minimumStoppingDistnce,1)
     XCTAssertEqual(maximumStoppingDistnce,15)
     
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value: 125, units: .imperial)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value: 200, units: .imperial)
+    safeties!.governorTrippingSpeed = Measurement(value: 125, unitSystem: .imperial)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value: 200, unitSystem: .imperial)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = false
     minimumStoppingDistnce = safeties!.minimumStoppingDistance
     maximumStoppingDistnce = safeties!.maximumStoppingDistance
@@ -65,32 +65,32 @@ class SafetiesCodeRequirementTest: XCTestCase {
   }
   
   func testTabulatedStoppingDistance() {
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value: 2.9, units: .metric)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value: 1.0, units: .metric)
+    safeties!.governorTrippingSpeed = Measurement(value: 2.9, unitSystem: .metric)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value: 1.0, unitSystem: .metric)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = true
     var minimumStoppingDistance = safeties!.minimumStoppingDistance
     var maximumStoppingDistance = safeties!.maximumStoppingDistance
     XCTAssertEqual(minimumStoppingDistance, 430)
     XCTAssertEqual(maximumStoppingDistance, 1480)
     
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value: 1.0, units: .metric)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value: 2.9, units: .metric)
+    safeties!.governorTrippingSpeed = Measurement(value: 1.0, unitSystem: .metric)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value: 2.9, unitSystem: .metric)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = false
     minimumStoppingDistance = safeties!.minimumStoppingDistance
     maximumStoppingDistance = safeties!.maximumStoppingDistance
     XCTAssertEqual(minimumStoppingDistance, 430)
     XCTAssertEqual(maximumStoppingDistance, 1480)
     
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value: 395, units: .imperial)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value: 200, units: .imperial)
+    safeties!.governorTrippingSpeed = Measurement(value: 395, unitSystem: .imperial)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value: 200, unitSystem: .imperial)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = true
     minimumStoppingDistance = safeties!.minimumStoppingDistance
     maximumStoppingDistance = safeties!.maximumStoppingDistance
     XCTAssertEqual(minimumStoppingDistance, 8)
     XCTAssertEqual(maximumStoppingDistance, 33)
     
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value: 200, units: .imperial)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value: 395, units: .imperial)
+    safeties!.governorTrippingSpeed = Measurement(value: 200, unitSystem: .imperial)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value: 395, unitSystem: .imperial)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = false
     minimumStoppingDistance = safeties!.minimumStoppingDistance
     maximumStoppingDistance = safeties!.maximumStoppingDistance
@@ -100,32 +100,32 @@ class SafetiesCodeRequirementTest: XCTestCase {
   }
 
   func testInterpolatedStoppingDistance() {
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value: 3, units: .metric)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value: 1.0, units: .metric)
+    safeties!.governorTrippingSpeed = Measurement(value: 3, unitSystem: .metric)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value: 1.0, unitSystem: .metric)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = true
     var minimumStoppingDistance = safeties!.minimumStoppingDistance
     var maximumStoppingDistance = safeties!.maximumStoppingDistance
     XCTAssertEqual(minimumStoppingDistance, 460)
     XCTAssertEqual(maximumStoppingDistance, 1568)
     
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value: 1.0, units: .metric)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value: 3, units: .metric)
+    safeties!.governorTrippingSpeed = Measurement(value: 1.0, unitSystem: .metric)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value: 3, unitSystem: .metric)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = false
     minimumStoppingDistance = safeties!.minimumStoppingDistance
     maximumStoppingDistance = safeties!.maximumStoppingDistance
     XCTAssertEqual(minimumStoppingDistance, 460)
     XCTAssertEqual(maximumStoppingDistance, 1568)
     
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value: 425, units: .imperial)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value: 200, units: .imperial)
+    safeties!.governorTrippingSpeed = Measurement(value: 425, unitSystem: .imperial)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value: 200, unitSystem: .imperial)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = true
     minimumStoppingDistance = safeties!.minimumStoppingDistance
     maximumStoppingDistance = safeties!.maximumStoppingDistance
     XCTAssertEqual(minimumStoppingDistance, 9)
     XCTAssertEqual(maximumStoppingDistance, 36)
     
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value: 200, units: .imperial)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value: 425, units: .imperial)
+    safeties!.governorTrippingSpeed = Measurement(value: 200, unitSystem: .imperial)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value: 425, unitSystem: .imperial)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = false
     minimumStoppingDistance = safeties!.minimumStoppingDistance
     maximumStoppingDistance = safeties!.maximumStoppingDistance
@@ -134,32 +134,32 @@ class SafetiesCodeRequirementTest: XCTestCase {
   }
   
   func testStoppingDistance_atHighSpeed() {
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value:14,units:.metric)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value:10,units:.metric)
+    safeties!.governorTrippingSpeed = Measurement(value:14, unitSystem:.metric)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value:10, unitSystem:.metric)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = true
     var minimumStoppingDistance = safeties!.minimumStoppingDistance
     var maximumStoppingDistance = safeties!.maximumStoppingDistance
     XCTAssertEqual(minimumStoppingDistance,9984)
     XCTAssertEqual(maximumStoppingDistance,28785)
     
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value: 10, units: .metric)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value: 14, units: .metric)
+    safeties!.governorTrippingSpeed = Measurement(value: 10, unitSystem: .metric)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value: 14, unitSystem: .metric)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = false
     minimumStoppingDistance = safeties!.minimumStoppingDistance
     maximumStoppingDistance = safeties!.maximumStoppingDistance
     XCTAssertEqual(minimumStoppingDistance, 9984)
     XCTAssertEqual(maximumStoppingDistance, 28785)
     
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value:2600, units:.imperial)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value: 1000, units: .imperial)
+    safeties!.governorTrippingSpeed = Measurement(value:2600, unitSystem:.imperial)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value: 1000, unitSystem: .imperial)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = true
     minimumStoppingDistance = safeties!.minimumStoppingDistance
     maximumStoppingDistance = safeties!.maximumStoppingDistance
     XCTAssertEqual(minimumStoppingDistance,349)
     XCTAssertEqual(maximumStoppingDistance,1009)
     
-    safeties!.governorTrippingSpeed = MyMeasurement(of: .speed,value: 1000, units: .imperial)
-    safeties!.maximumGovernorTrippingSpeed = MyMeasurement(of: .speed,value: 2600, units: .imperial)
+    safeties!.governorTrippingSpeed = Measurement(value: 1000, unitSystem: .imperial)
+    safeties!.maximumGovernorTrippingSpeed = Measurement(value: 2600, unitSystem: .imperial)
     safeties!.useGovernorTrippingSpeedForStoppingDistance = false
     minimumStoppingDistance = safeties!.minimumStoppingDistance
     maximumStoppingDistance = safeties!.maximumStoppingDistance

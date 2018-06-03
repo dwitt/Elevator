@@ -44,6 +44,9 @@ class elevatorTableViewController: UITableViewController{
     // self.navigationItem.rightBarButtonItem = self.editButtonItem
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    updateView()
+  }
   
   
   override func didReceiveMemoryWarning() {
@@ -144,6 +147,7 @@ class elevatorTableViewController: UITableViewController{
   // MARK: - Navigation
   
   // In a storyboard-based application, you will often want to do a little preparation before navigation
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.

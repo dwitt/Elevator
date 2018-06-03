@@ -12,5 +12,19 @@ enum UnitSystem: Int {
   case metric = 0
   case imperial = 1
   case unknown = 2
-    
+  
+  var speed: UnitSpeed {
+    get {
+      switch self {
+      case .metric:
+        return UnitSpeed.metersPerSecond
+      case .imperial:
+        return UnitSpeed.feetPerMinute
+      default:
+        return UnitSpeed.metersPerSecond
+      }
+    }
+  }
 }
+
+

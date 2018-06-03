@@ -13,10 +13,13 @@ import Foundation
 
 struct Inspector {
   
+  // TODO: - Changes required in this Model to change to the Foundation Measurement Class
+  // TODO: 1. elevatorRatedSpeedForGovernorSetting must return a Measurement
+  // TODO: 2. change governorSpeedUnits to UnitType
   
   // Assist the inspector in determining what speed to use when checking the governor
   
-  func elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed elevatorRatedSpeed: Measurement<UnitSpeed>, usingTabulatedSpeeds tabulatedEquivalentSpeeds: Bool, resultInUnits governorSpeedUnits: UnitSystem ) -> MyMeasurement {
+  func elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed elevatorRatedSpeed: Measurement<UnitSpeed>, usingTabulatedSpeeds tabulatedEquivalentSpeeds: Bool, resultInUnits governorSpeedUnits: UnitSpeed ) -> Measurement<UnitSpeed> {
     
     var ratedSpeed: Double
     
@@ -27,14 +30,18 @@ struct Inspector {
     // Start by converting the elevator speed to the correct units
 
     // TODO: - need to have a conversion function from a Dimension to my UnitSystem
+    // TODO: 3. use Measurement Conversion
     
-    if elevatorRatedSpeed.unitSystem != governorSpeedUnits {
+    if elevatorRatedSpeed.unit as UnitSpeed != governorSpeedUnits {
       // Convert the speed to the correct units
-      if governorSpeedUnits == .metric {
-        ratedSpeed = elevatorRatedSpeed.value * conversionFactorFpmToMps
-      } else {
-        ratedSpeed = elevatorRatedSpeed.value  / conversionFactorFpmToMps
-      }
+      let convertedSpeed = elevatorRatedSpeed.converted(to: governorSpeedUnits)
+      ratedSpeed = convertedSpeed.value
+      
+//      if governorSpeedUnits == .metric {
+//        ratedSpeed = elevatorRatedSpeed.value * conversionFactorFpmToMps
+//      } else {
+//        ratedSpeed = elevatorRatedSpeed.value  / conversionFactorFpmToMps
+//      }
     } else {
       // No conversion required
       ratedSpeed = elevatorRatedSpeed.value
@@ -45,8 +52,9 @@ struct Inspector {
     if tabulatedEquivalentSpeeds {
       
       // Check which units are selected so that we can use the correct tabulation
+      // TODO: 4. use
       
-      if governorSpeedUnits == .metric {
+      if governorSpeedUnits == UnitSystem.metric.speed {
         let speeds: [Double]  = [0.63, 0.75, 0.87, 1.00, 1.12, 1.25, 1.50, 1.75, 2.00, 2.25,
                                  2.50, 3.00, 3.50, 4.00, 4.50, 5.00, 5.50, 6.00, 6.50, 7.00,
                                  7.50, 8.00, 8.50, 9.00, 10.00]
@@ -62,10 +70,10 @@ struct Inspector {
           // the actual difference between the units converted value and the table value
           
           if percentDeviation < 0.02 {
-            return MyMeasurement(of: .speed, value: closest.element, units: governorSpeedUnits)
+            return Measurement(value: closest.element, unit: governorSpeedUnits)
           }
           
-          return MyMeasurement(of: .speed, value: ratedSpeed, units: governorSpeedUnits)
+          return Measurement(value: ratedSpeed, unit: governorSpeedUnits)
         }
         
       } else {
@@ -84,13 +92,13 @@ struct Inspector {
           // the actual difference between the units converted value and the table value
           
           if percentDeviation < 0.02 {
-            return MyMeasurement(of: .speed, value: closest.element, units: governorSpeedUnits)
+            return Measurement(value: closest.element, unit: governorSpeedUnits)
           }
           
-          return MyMeasurement(of: .speed, value: ratedSpeed, units: governorSpeedUnits)
+          return Measurement(value: ratedSpeed, unit: governorSpeedUnits)
         }
       }
     }
-    return MyMeasurement(of: .speed, value: ratedSpeed, units: governorSpeedUnits)
+    return Measurement(value: ratedSpeed, unit: governorSpeedUnits)
     }
 }

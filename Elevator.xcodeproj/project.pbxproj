@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		630CBE4F205DCBDA00197347 /* MyMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CBE4E205DCBDA00197347 /* MyMeasurement.swift */; };
 		6318053B204D79EE0063D9ED /* ElevatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318053A204D79EE0063D9ED /* ElevatorViewModel.swift */; };
 		6318053D204D7B140063D9ED /* elevatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318053C204D7B140063D9ED /* elevatorTableViewController.swift */; };
 		6339ADA320ADE2DA000DCE83 /* UnitSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6339ADA220ADE2DA000DCE83 /* UnitSpeed.swift */; };
@@ -47,7 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		630CBE4E205DCBDA00197347 /* MyMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMeasurement.swift; sourceTree = "<group>"; };
 		6318053A204D79EE0063D9ED /* ElevatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorViewModel.swift; sourceTree = "<group>"; };
 		6318053C204D7B140063D9ED /* elevatorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = elevatorTableViewController.swift; sourceTree = "<group>"; };
 		6339ADA220ADE2DA000DCE83 /* UnitSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSpeed.swift; sourceTree = "<group>"; };
@@ -265,12 +263,11 @@
 		63F97AE1202CBC85006F187D /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				639973D1201A39AB00FDC6D7 /* Elevator.swift */,
 				63F97AE2202CBCB5006F187D /* InspectorDataModel.swift */,
 				63F97AE4202DEC35006F187D /* ElevatorCode.swift */,
 				63CE17FF205E830F00318C69 /* GovernorCodeRequirement.swift */,
 				6377BF4520714CC20028DD1E /* Safeties Code Requirement.swift */,
-				639973D1201A39AB00FDC6D7 /* Elevator.swift */,
-				630CBE4E205DCBDA00197347 /* MyMeasurement.swift */,
 				6377BF43207147FA0028DD1E /* UnitSystem.swift */,
 			);
 			path = "Data Models";
@@ -412,7 +409,6 @@
 				63F97AE8202F7DBA006F187D /* GovernorInspectionViewModel.swift in Sources */,
 				639973C0201A384300FDC6D7 /* governorTableViewController.swift in Sources */,
 				63CE1800205E830F00318C69 /* GovernorCodeRequirement.swift in Sources */,
-				630CBE4F205DCBDA00197347 /* MyMeasurement.swift in Sources */,
 				639973BE201A384300FDC6D7 /* AppDelegate.swift in Sources */,
 				639973D2201A39AB00FDC6D7 /* Elevator.swift in Sources */,
 				63F97AE3202CBCB5006F187D /* InspectorDataModel.swift in Sources */,

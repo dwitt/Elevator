@@ -65,12 +65,16 @@ struct ElevatorViewModel {
   
   var governorTrippingSpeedUnits: Int {
     get {
-      return elevator.governorTrippingSpeed.units.rawValue
+      return elevator.governorTrippingSpeed.unitSystem.rawValue
     }
     set(units) {
-      if let governorTrippingSpeedUnits = UnitSystem(rawValue: units), elevator.governorTrippingSpeed.units != governorTrippingSpeedUnits {
-        elevator.governorTrippingSpeed.units = governorTrippingSpeedUnits
-        elevator.governorTrippingSpeed.convertValueToCurrentUnits()
+      if let governorTrippingSpeedUnits = UnitSystem(rawValue: units), elevator.governorTrippingSpeed.unitSystem != governorTrippingSpeedUnits {
+        
+        elevator.governorTrippingSpeed.convert(to: governorTrippingSpeedUnits)
+        
+        // TODO: function above should handle converstion and the following can be deleted
+        //elevator.governorTrippingSpeed.units = governorTrippingSpeedUnits
+        //elevator.governorTrippingSpeed.convertValueToCurrentUnits()
       }
     }
   }
@@ -88,6 +92,8 @@ struct ElevatorViewModel {
     let viewModel = GovernorInspectionViewModel(elevator: self.elevator)
     return viewModel
   }
+  
+
   
   // MARK: - Helper Functions
   
