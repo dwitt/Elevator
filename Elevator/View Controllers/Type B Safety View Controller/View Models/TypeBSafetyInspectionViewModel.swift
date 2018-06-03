@@ -21,11 +21,11 @@ struct TypeBSafetyInspectionViewModel {
   // MARK: - Properties
   
 
-  var ratedSpeedForSafetySlide: MyMeasurement
+  var ratedSpeedForSafetySlide: Measurement<UnitLength>
   var tabulatedEquivalentSpeeds: Bool
-  var maximumGovernorTrippingSpeed: MyMeasurement
+  var maximumGovernorTrippingSpeed: Measurement<UnitLength>
   var slideCalulationBasedOnMaximumGovernorTrippingSpeed: Bool
-  var maximumSafetySlide: MeasurementParameter
-  var minimumSafetySlide: MeasurementParameter
+  var maximumSafetySlide: Measurement<UnitLength>
+  var minimumSafetySlide: Measurement<UnitLength>
   
 }
