@@ -12,6 +12,15 @@ struct ElevatorCode {
 
     
   var governor: GovernorCodeRequirement = GovernorCodeRequirement()
-  var safeties: SafetiesCodeRequirement? = SafetiesCodeRequirement()
+  var safeties: SafetiesCodeRequirement
+  
+  init() {
+    do {
+      try self.safeties = SafetiesCodeRequirement()
+    }
+    catch {
+      fatalError()
+    }
+  }
   
 }

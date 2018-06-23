@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: - Measurement Extension for UnitSpeed
+
 extension Measurement where UnitType: UnitSpeed {
   
   // MARK: - Initializers
@@ -48,30 +50,8 @@ extension Measurement where UnitType: UnitSpeed {
     
     self.init(value: value, unit: unitType)
   }
-  
-//  func convertToMyMeasurement() -> MyMeasurement {
-//    
-//    let myMeasurement = MyMeasurement(of: .speed, value: self.value, units: self.unitSystem)
-//    return myMeasurement
-//  }
-  
-  
 
-  
-  private func unit(for unitSystem: UnitSystem) -> UnitType {
-    
-    switch unitSystem {
-    case .metric:
-      return UnitSpeed.metersPerSecond as! UnitType
-    case .imperial:
-      return UnitSpeed.feetPerMinute as! UnitType
-    default:
-      return UnitSpeed.metersPerSecond as! UnitType
-    }
-    
-  }
-  
-  
+  // MARK: - Public Properties
   
   var valueAsString : String {
     get {
@@ -91,7 +71,6 @@ extension Measurement where UnitType: UnitSpeed {
     }
   }
   
-
   var unitSystem: UnitSystem {
     get {
       var system: UnitSystem
@@ -112,6 +91,7 @@ extension Measurement where UnitType: UnitSpeed {
     }
   }
 
+  // MARK: - Public Methods
   
   mutating func convert(to otherUnitSystem: UnitSystem) {
     switch otherUnitSystem {
@@ -125,4 +105,56 @@ extension Measurement where UnitType: UnitSpeed {
   }
   
   
+}
+
+// MARK: - Measurement Extension for UnitLength
+
+extension Measurement where UnitType: UnitLength {
+  
+  var valueAsString : String {
+    get {
+      switch self.unitSystem {
+      case .metric:
+        return String(format: "%.2f", value)
+      case .imperial:
+        return String(format: "%.0f", value)
+      default:
+        return String(value)
+      }
+    }
+    set {
+      if let newSpeedValue = Double(newValue) {
+        value = newSpeedValue
+      }
+    }
+  }
+  
+  var unitSystem: UnitSystem {
+    get {
+      var system: UnitSystem
+      
+      switch self.unit.symbol {
+      case "mm":
+        system = UnitSystem.metric
+      case "in":
+        system = UnitSystem.imperial
+      default:
+        system = UnitSystem.unknown
+      }
+      return system
+    }
+  }
+  
+  // MARK: - Public Methods
+  
+  mutating func convert(to otherUnitSystem: UnitSystem) {
+    switch otherUnitSystem {
+    case .metric:
+      self.convert(to: UnitLength.millimeters as! UnitType)
+    case .imperial:
+      self.convert(to: UnitLength.inches as! UnitType)
+    case .unknown:
+      break
+    }
+  }
 }

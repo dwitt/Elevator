@@ -81,14 +81,15 @@ struct GovernorCodeRequirement {
   // MARK: - Public Computed Properties
   
   var maximumTrippingSpeed: Measurement<UnitSpeed> {
-
+    
     if elevatorRatedSpeed.value <= ratedSpeedThresholdForGovernorTripping.lowSpeed.inUnits(elevatorRatedSpeed.unit) {
       return lowGovernorTrippingSpeed(forSpeed: elevatorRatedSpeed)
     }
-    
+
     if elevatorRatedSpeed.value > ratedSpeedThresholdForGovernorTripping.highSpeed.inUnits(elevatorRatedSpeed.unit) {
       return highGovernorTrippingSpeed(forSpeed: elevatorRatedSpeed)
     }
+
     return tabulatedGovernorTrippingSpeed(forSpeed: elevatorRatedSpeed)
   }
   
@@ -242,7 +243,7 @@ struct GovernorCodeRequirement {
     if units == UnitSystem.metric.speed {
       return(Measurement(value: maxTrippingSpeed/100, unit: units))
     } else {
-      return(Measurement(value: maxTrippingSpeed/100, unit: units))
+      return(Measurement(value: maxTrippingSpeed, unit: units))
     }
   }
   

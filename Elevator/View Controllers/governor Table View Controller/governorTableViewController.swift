@@ -31,6 +31,7 @@ class governorTableViewController: UITableViewController {
   @IBOutlet weak var actualGovernorTrippingSpeedTextField: UITextField!
   @IBOutlet weak var actualGovernorTrippingSpeedUnitsSegmentControl: UISegmentedControl!
   
+  var actualGovernorTrippingSpeedInAcceptableRange: Bool = false
   
   @IBOutlet weak var overspeedSwitchSpeedUnitsSegmentControl: UISegmentedControl!
   @IBOutlet weak var overspeedSwitchSpeedLabel: UILabel!
@@ -126,6 +127,13 @@ class governorTableViewController: UITableViewController {
     actualGovernorTrippingSpeedTextField.text = viewModel.governorTrippingSpeed.valueAsString
     actualGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex = viewModel.governorTrippingSpeed.unitSystem.rawValue
     
+    actualGovernorTrippingSpeedInAcceptableRange = viewModel.governorTrippingSpeedInAcceptableRange
+    if actualGovernorTrippingSpeedInAcceptableRange {
+      actualGovernorTrippingSpeedTextField.textColor = UIColor(named: "Dark Green")
+    } else {
+      actualGovernorTrippingSpeedTextField.textColor = UIColor(named: "Red")
+    }
+    
     staticControlSwitch.isOn = viewModel.staticControl
     
     speedReducingSwitch.isOn = viewModel.speedReducingSwitch
@@ -187,6 +195,7 @@ class governorTableViewController: UITableViewController {
   @IBAction func actualGovernorTrippingSpeedChanged() {
     if let trippingSpeedText = actualGovernorTrippingSpeedTextField.text {
       viewModel?.governorTrippingSpeed.valueAsString = trippingSpeedText
+      
       updateView()
     }
   }
@@ -211,11 +220,7 @@ class governorTableViewController: UITableViewController {
       updateView()
     }
     
-    
-    //viewModel?.governorTrippingSpeed.unitsAsInt = actualGovernorTrippingSpeedUnitsSegmentControl.selectedSegmentIndex
-    //if !actualGovernorTrippingSpeedTextField.isEditing {
-    //  updateView()
-    //}
+
   }
   
   @IBAction func staticControlSwitchChanged() {

@@ -68,6 +68,14 @@ struct GovernorInspectionViewModel {
     }
   }
   
+  var governorTrippingSpeedInAcceptableRange: Bool {
+    if governorTrippingSpeed <= governorMaximumTrippingSpeed && governorTrippingSpeed >= governorMinimumTrippingSpeed {
+      return true
+    } else {
+      return false
+    }
+  }
+  
   // MARK: - MyMeasurement Variables
 
   var elevatorRatedSpeedForGovernorSetting: Measurement<UnitSpeed> {
@@ -83,7 +91,6 @@ struct GovernorInspectionViewModel {
       
       // MARK: - Set the units based on the unit system
       governorTrippingSpeed.convert(to: elevatorRatedSpeedForGovernorSetting.unit)
-      //governorTrippingSpeed.unitsAsInt = elevatorRatedSpeedForGovernorSetting.units.rawValue
 
     }
   }
@@ -99,14 +106,7 @@ struct GovernorInspectionViewModel {
     
     self.elevator = elevator
     
-    //elevator.governorTrippingSpeed.unit = elevator.ratedSpeed.unit
-    //elevator.governorTrippingSpeed.convertValueToCurrentUnits()
-    
     elevatorRatedSpeedForGovernorSetting = elevator.ratedSpeed
-    
-    // TODO: - adjust all of the unit to match the rated MyMeasurement
-    // elevator.governorTrippingSpeed
-    // 
     
     // MARK: Initialize the Governor Code Model
     
@@ -136,10 +136,7 @@ struct GovernorInspectionViewModel {
   private mutating func updateMaxMinToMatchTrippingSpeedUnits() {
     governorMaximumTrippingSpeed.convert(to: governorTrippingSpeed.unit)
     governorMinimumTrippingSpeed.convert(to: governorTrippingSpeed.unit)
-//    governorMaximumTrippingSpeed.unit = governorTrippingSpeed.unit
-//    governorMaximumTrippingSpeed.convertValueToCurrentUnits()
-//    governorMinimumTrippingSpeed.units = governorTrippingSpeed.unitSystem
-//    governorMinimumTrippingSpeed.convertValueToCurrentUnits()
+
     
   }
   

@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum DataFile: Error {
+  case notRead
+}
+
 struct SafetiesCodeRequirement {
   
   // MARK: - Private Properties
@@ -32,35 +36,43 @@ struct SafetiesCodeRequirement {
   
   // MARK: Public Computed Properties
   
-  var minimumStoppingDistance: Int {
+  var minimumStoppingDistance: Measurement<UnitLength> {
     if useGovernorTrippingSpeedForStoppingDistance {
-      return stopping(distance: .minimum, forSpeed: governorTrippingSpeed)
+      let distance = stopping(distance: .minimum, forSpeed: governorTrippingSpeed)
+      let unitSystem = governorTrippingSpeed.unitSystem
+      return Measurement(value: Double(distance), unit: unitSystem.length)
     } else {
-      return stopping(distance: .minimum, forSpeed: maximumGovernorTrippingSpeed)
+      let distance = stopping(distance: .minimum, forSpeed: maximumGovernorTrippingSpeed)
+      let unitSystem = maximumGovernorTrippingSpeed.unitSystem
+      return Measurement(value: Double(distance), unit: unitSystem.length)
     }
   }
   
-  var maximumStoppingDistance: Int {
+  var maximumStoppingDistance: Measurement<UnitLength> {
     if useGovernorTrippingSpeedForStoppingDistance {
-      return stopping(distance: .maximum, forSpeed: governorTrippingSpeed)
+      let distance = stopping(distance: .maximum, forSpeed: governorTrippingSpeed)
+      let unitSystem = governorTrippingSpeed.unitSystem
+      return Measurement(value: Double(distance), unit: unitSystem.length)
     } else {
-      return stopping(distance: .maximum, forSpeed: maximumGovernorTrippingSpeed)
+      let distance = stopping(distance: .maximum, forSpeed: maximumGovernorTrippingSpeed)
+      let unitSystem = maximumGovernorTrippingSpeed.unitSystem
+      return Measurement(value: Double(distance), unit: unitSystem.length)
     }
   }
   
   // MARK: - Initializer
   
-  init?() {
+  init() throws {
     
     if let stoppingDistances = readStoppingDistances(fromFileNamed: "MetricTypeBSafetyStoppingDistances") {
       typeBStoppingDistancesForSpeedInCmps = stoppingDistances
     } else {
-      return nil
+      throw DataFile.notRead
     }
     if let stoppingDistances = readStoppingDistances(fromFileNamed: "ImperialTypeBSafetyStoppingDistances") {
       typeBStoppingDistancesForSpeedInFpm = stoppingDistances
     } else {
-      return nil
+      throw DataFile.notRead
     }
     
   }

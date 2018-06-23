@@ -12,11 +12,7 @@ import Foundation
 // Provides functions that a real world inspector would perform to help make descisions
 
 struct Inspector {
-  
-  // TODO: - Changes required in this Model to change to the Foundation Measurement Class
-  // TODO: 1. elevatorRatedSpeedForGovernorSetting must return a Measurement
-  // TODO: 2. change governorSpeedUnits to UnitType
-  
+
   // Assist the inspector in determining what speed to use when checking the governor
   
   func elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed elevatorRatedSpeed: Measurement<UnitSpeed>, usingTabulatedSpeeds tabulatedEquivalentSpeeds: Bool, resultInUnits governorSpeedUnits: UnitSpeed ) -> Measurement<UnitSpeed> {
@@ -28,20 +24,12 @@ struct Inspector {
     // the requested lookup speed
     
     // Start by converting the elevator speed to the correct units
-
-    // TODO: - need to have a conversion function from a Dimension to my UnitSystem
-    // TODO: 3. use Measurement Conversion
     
     if elevatorRatedSpeed.unit as UnitSpeed != governorSpeedUnits {
       // Convert the speed to the correct units
       let convertedSpeed = elevatorRatedSpeed.converted(to: governorSpeedUnits)
       ratedSpeed = convertedSpeed.value
-      
-//      if governorSpeedUnits == .metric {
-//        ratedSpeed = elevatorRatedSpeed.value * conversionFactorFpmToMps
-//      } else {
-//        ratedSpeed = elevatorRatedSpeed.value  / conversionFactorFpmToMps
-//      }
+
     } else {
       // No conversion required
       ratedSpeed = elevatorRatedSpeed.value

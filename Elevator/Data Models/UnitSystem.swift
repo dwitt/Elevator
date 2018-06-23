@@ -25,6 +25,19 @@ enum UnitSystem: Int {
       }
     }
   }
+  
+  var length: UnitLength {
+    get {
+      switch self {
+      case .metric:
+        return UnitLength.millimeters
+      case .imperial:
+        return UnitLength.inches
+      default:
+        return UnitLength.millimeters
+      }
+    }
+  }
 }
 
 

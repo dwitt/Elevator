@@ -93,6 +93,11 @@ struct ElevatorViewModel {
     return viewModel
   }
   
+  func createTypeBSafetyInspectionViewModel() -> TypeBSafetyInspectionViewModel {
+    let viewModel = TypeBSafetyInspectionViewModel(elevator: self.elevator)
+    return viewModel
+  }
+  
 
   
   // MARK: - Helper Functions

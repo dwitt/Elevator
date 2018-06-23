@@ -98,7 +98,7 @@ class elevatorTableViewController: UITableViewController{
     ratedSpeedUnitsSegmentedControl.selectedSegmentIndex = viewModel.ratedSpeedUnits
     
     governorTrippingSpeedTextField.text = viewModel.governorTrippingSpeed
-    governorTrippingSpeedSegmentedControl.selectedSegmentIndex = viewModel.ratedSpeedUnits
+    governorTrippingSpeedSegmentedControl.selectedSegmentIndex = viewModel.governorTrippingSpeedUnits
     
   }
   
@@ -156,6 +156,8 @@ class elevatorTableViewController: UITableViewController{
       switch identifier {
       case "governorInspection":
         prepareGovernorTableViewController(for: segue)
+      case "typeBSafetyInspection":
+        prepareTypeBSafetyInspectionTableViewController(for: segue)
       default:
         return
       }
@@ -169,6 +171,14 @@ class elevatorTableViewController: UITableViewController{
     // inject the dependancy
     if let viewModel = viewModel {
       governorTableViewController.viewModel = viewModel.createGovernorInspectionViewModel()
+    }
+  }
+  
+  func prepareTypeBSafetyInspectionTableViewController(for segue: UIStoryboardSegue) {
+    let typeBSafetyInspectionTableViewController = segue.destination as! TypeBSafetyInspectionTableViewController
+    
+    if let viewModel = viewModel {
+      typeBSafetyInspectionTableViewController.viewModel = viewModel.createTypeBSafetyInspectionViewModel()
     }
   }
   
