@@ -30,16 +30,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rated Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tl-e8-Wgj">
-                                                    <rect key="frame" x="20" y="10" width="208" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Rated Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tl-e8-Wgj">
+                                                    <rect key="frame" x="20" y="10" width="206" height="24"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lhq-XI-Jye">
-                                                    <rect key="frame" x="319" y="8" width="75" height="29"/>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lhq-XI-Jye">
+                                                    <rect key="frame" x="317" y="8" width="77" height="29"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="75" id="ps4-6r-87d"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="ps4-6r-87d"/>
                                                     </constraints>
                                                     <segments>
                                                         <segment title="m/s"/>
@@ -51,7 +51,7 @@
                                                     </connections>
                                                 </segmentedControl>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBT-BU-hB0">
-                                                    <rect key="frame" x="236" y="6.6666666666666661" width="75" height="30.666666666666671"/>
+                                                    <rect key="frame" x="234" y="7" width="75" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="75" id="bv8-eL-kp4"/>
                                                     </constraints>
@@ -67,8 +67,8 @@
                                                 <constraint firstItem="lhq-XI-Jye" firstAttribute="centerY" secondItem="kbi-za-9gW" secondAttribute="centerY" id="Bc1-Qh-dUy"/>
                                                 <constraint firstItem="6Tl-e8-Wgj" firstAttribute="leading" secondItem="kbi-za-9gW" secondAttribute="leadingMargin" id="GYi-qM-Nvv"/>
                                                 <constraint firstItem="6Tl-e8-Wgj" firstAttribute="centerY" secondItem="kbi-za-9gW" secondAttribute="centerY" id="LEM-u5-Nw7"/>
-                                                <constraint firstAttribute="bottom" secondItem="IBT-BU-hB0" secondAttribute="bottom" constant="6.5" id="Lgs-6F-TJ4"/>
                                                 <constraint firstItem="lhq-XI-Jye" firstAttribute="leading" secondItem="IBT-BU-hB0" secondAttribute="trailing" constant="8" symbolic="YES" id="OPg-BB-RR3"/>
+                                                <constraint firstItem="IBT-BU-hB0" firstAttribute="centerY" secondItem="kbi-za-9gW" secondAttribute="centerY" id="edV-Tb-nXm"/>
                                                 <constraint firstItem="lhq-XI-Jye" firstAttribute="trailing" secondItem="kbi-za-9gW" secondAttribute="trailingMargin" id="go9-zN-ny5"/>
                                                 <constraint firstItem="IBT-BU-hB0" firstAttribute="centerY" secondItem="lhq-XI-Jye" secondAttribute="centerY" id="m2y-oD-i8N"/>
                                                 <constraint firstItem="IBT-BU-hB0" firstAttribute="leading" secondItem="6Tl-e8-Wgj" secondAttribute="trailing" constant="8" symbolic="YES" id="pNO-Ap-Y0w"/>
@@ -82,16 +82,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Gov. Tripping Speed" textAlignment="natural" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X3k-b1-IKj">
-                                                    <rect key="frame" x="20" y="10" width="208" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Gov. Tripping Speed" textAlignment="natural" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X3k-b1-IKj">
+                                                    <rect key="frame" x="20" y="10" width="206" height="24"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="egi-Gi-4ry">
-                                                    <rect key="frame" x="319" y="8" width="75" height="29"/>
+                                                    <rect key="frame" x="317" y="8" width="77" height="29"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="75" id="sk5-CR-rwu"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="sk5-CR-rwu"/>
                                                     </constraints>
                                                     <segments>
                                                         <segment title="m/s"/>
@@ -104,7 +104,7 @@
                                                     </connections>
                                                 </segmentedControl>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJG-Fa-rEK">
-                                                    <rect key="frame" x="236" y="6.6666666666666661" width="75" height="30.666666666666671"/>
+                                                    <rect key="frame" x="234" y="6.6666666666666661" width="75" height="30.666666666666671"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="75" id="SXd-a8-a8w"/>
                                                     </constraints>
@@ -213,11 +213,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <segmentedControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qdg-cn-KHA">
-                                                    <rect key="frame" x="319" y="8" width="75" height="29"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="75" id="O2f-yV-uQd"/>
-                                                    </constraints>
+                                                <segmentedControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qdg-cn-KHA">
+                                                    <rect key="frame" x="317" y="8" width="77" height="29"/>
                                                     <segments>
                                                         <segment title="m/s"/>
                                                         <segment title="fpm"/>
@@ -225,13 +222,13 @@
                                                     <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </segmentedControl>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Rated Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rys-7N-bSB">
-                                                    <rect key="frame" x="20" y="10" width="208" height="24"/>
+                                                    <rect key="frame" x="20" y="10" width="206" height="24"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Koy-al-OZ3">
-                                                    <rect key="frame" x="236" y="7" width="75" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Koy-al-OZ3">
+                                                    <rect key="frame" x="234" y="7" width="75" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Pxo-ia-guI"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="Sbr-7Q-fbi"/>
@@ -244,11 +241,11 @@
                                             <constraints>
                                                 <constraint firstItem="Qdg-cn-KHA" firstAttribute="centerY" secondItem="2zI-rL-PNP" secondAttribute="centerY" id="E2G-aB-8vR"/>
                                                 <constraint firstItem="Rys-7N-bSB" firstAttribute="leading" secondItem="2zI-rL-PNP" secondAttribute="leadingMargin" id="E58-ps-0jA"/>
-                                                <constraint firstItem="Koy-al-OZ3" firstAttribute="leading" secondItem="Rys-7N-bSB" secondAttribute="trailing" constant="8" id="IGA-Fy-lR8"/>
                                                 <constraint firstItem="Rys-7N-bSB" firstAttribute="centerY" secondItem="2zI-rL-PNP" secondAttribute="centerY" id="PaF-tg-rVt"/>
-                                                <constraint firstItem="Qdg-cn-KHA" firstAttribute="leading" secondItem="Koy-al-OZ3" secondAttribute="trailing" constant="8" id="UUG-7A-NRc"/>
-                                                <constraint firstItem="Qdg-cn-KHA" firstAttribute="trailing" secondItem="2zI-rL-PNP" secondAttribute="trailingMargin" id="fMh-BF-rgc"/>
+                                                <constraint firstItem="Koy-al-OZ3" firstAttribute="leading" secondItem="Rys-7N-bSB" secondAttribute="trailing" constant="8" id="luc-7V-fd8"/>
                                                 <constraint firstItem="Koy-al-OZ3" firstAttribute="centerY" secondItem="2zI-rL-PNP" secondAttribute="centerY" id="mT7-58-Ft1"/>
+                                                <constraint firstItem="Qdg-cn-KHA" firstAttribute="leading" secondItem="Koy-al-OZ3" secondAttribute="trailing" constant="8" id="muA-XH-v0g"/>
+                                                <constraint firstItem="Qdg-cn-KHA" firstAttribute="trailing" secondItem="2zI-rL-PNP" secondAttribute="trailingMargin" id="zTQ-ie-Jw0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -264,9 +261,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0v6-yD-pjE">
-                                                    <rect key="frame" x="319" y="8" width="75" height="29"/>
+                                                    <rect key="frame" x="317" y="8" width="77" height="29"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="75" id="0Da-rt-dM7"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="0Da-rt-dM7"/>
                                                     </constraints>
                                                     <segments>
                                                         <segment title="m/s"/>
@@ -276,14 +273,14 @@
                                                         <action selector="ratedSpeedForGovernorUnitsChanged" destination="uL3-iW-GJx" eventType="valueChanged" id="FCN-UX-gSk"/>
                                                     </connections>
                                                 </segmentedControl>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Rated Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7J-pO-BSG">
-                                                    <rect key="frame" x="20" y="10" width="208" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Rated Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7J-pO-BSG">
+                                                    <rect key="frame" x="20" y="10" width="206" height="24"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqd-5O-MI5">
-                                                    <rect key="frame" x="236" y="7" width="75" height="30"/>
+                                                    <rect key="frame" x="234" y="7" width="75" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Gv0-pi-BmC"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="ydz-VR-nqL"/>
@@ -344,16 +341,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Tripping Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l1d-E9-CxQ">
-                                                    <rect key="frame" x="20" y="10" width="208" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Tripping Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l1d-E9-CxQ">
+                                                    <rect key="frame" x="20" y="10" width="206" height="24"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iSh-Vj-3v3">
-                                                    <rect key="frame" x="319" y="8" width="75" height="29"/>
+                                                    <rect key="frame" x="317" y="8" width="77" height="29"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="75" id="jof-ee-0ni"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="jof-ee-0ni"/>
                                                     </constraints>
                                                     <segments>
                                                         <segment title="m/s"/>
@@ -364,7 +361,7 @@
                                                     </connections>
                                                 </segmentedControl>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8nV-nm-he0">
-                                                    <rect key="frame" x="236" y="7" width="75" height="30"/>
+                                                    <rect key="frame" x="234" y="7" width="75" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="zBf-cD-ALl"/>
                                                     </constraints>
@@ -678,7 +675,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NEe-kW-4bf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2625" y="214"/>
+            <point key="canvasLocation" x="2624.6376811594205" y="213.58695652173915"/>
         </scene>
         <!--Type B Safety Inspeciton-->
         <scene sceneID="VIt-i7-2lW">
@@ -795,16 +792,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Rated Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHl-vo-b1A">
-                                                    <rect key="frame" x="20" y="10" width="208" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Rated Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHl-vo-b1A">
+                                                    <rect key="frame" x="20" y="10" width="206" height="24"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IX0-tp-oGz">
-                                                    <rect key="frame" x="319" y="8" width="75" height="29"/>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IX0-tp-oGz">
+                                                    <rect key="frame" x="317" y="8" width="77" height="29"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="75" id="AuZ-MN-eYd"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="AuZ-MN-eYd"/>
                                                     </constraints>
                                                     <segments>
                                                         <segment title="m/s"/>
@@ -814,10 +811,10 @@
                                                         <action selector="ratedSpeedUnitsSegmentedControlValueChanged" destination="bqK-xl-DkF" eventType="valueChanged" id="WYE-Vn-vQs"/>
                                                     </connections>
                                                 </segmentedControl>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa5-Ip-uWd">
-                                                    <rect key="frame" x="236" y="7" width="75" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa5-Ip-uWd">
+                                                    <rect key="frame" x="234" y="7" width="75" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="75" id="0vG-y9-zIv"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="0vG-y9-zIv"/>
                                                         <constraint firstAttribute="height" constant="30" id="5LU-qM-lCN"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
@@ -877,16 +874,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Max. Tripping Spd" textAlignment="natural" lineBreakMode="tailTruncation" minimumScaleFactor="0.59999999999999998" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ge-wC-YRh">
-                                                    <rect key="frame" x="20" y="10" width="208" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Max. Tripping Spd" textAlignment="natural" lineBreakMode="tailTruncation" minimumScaleFactor="0.59999999999999998" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ge-wC-YRh">
+                                                    <rect key="frame" x="20" y="10" width="206" height="24"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wLL-SO-Jgj">
-                                                    <rect key="frame" x="319" y="8" width="75" height="29"/>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wLL-SO-Jgj">
+                                                    <rect key="frame" x="317" y="8" width="77" height="29"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="75" id="gAc-FE-hpc"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="gAc-FE-hpc"/>
                                                     </constraints>
                                                     <segments>
                                                         <segment title="m/s"/>
@@ -896,8 +893,8 @@
                                                         <action selector="maximumGovernorTrippingSpeedSegmentedControlChanged" destination="bqK-xl-DkF" eventType="valueChanged" id="QDS-2a-7VZ"/>
                                                     </connections>
                                                 </segmentedControl>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Label" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="06u-rZ-hii">
-                                                    <rect key="frame" x="236" y="10" width="75" height="24"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Label" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="06u-rZ-hii">
+                                                    <rect key="frame" x="234" y="10" width="75" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="kAC-qE-5RI"/>
                                                     </constraints>

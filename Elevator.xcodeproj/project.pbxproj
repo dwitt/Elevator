@@ -334,11 +334,12 @@
 				TargetAttributes = {
 					6377BF30207100280028DD1E = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1000;
 						TestTargetID = 639973B9201A384300FDC6D7;
 					};
 					639973B9201A384300FDC6D7 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -468,7 +469,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidwitt.ElevatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elevator.app/Elevator";
 			};
@@ -491,7 +492,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidwitt.ElevatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elevator.app/Elevator";
 			};
@@ -625,7 +626,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidwitt.ElevatorInspector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -644,7 +645,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidwitt.ElevatorInspector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
