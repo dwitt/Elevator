@@ -17,6 +17,9 @@ class governorTableViewController: UITableViewController {
   
   var textFieldDelegateForDecimalInput = TextFieldDelegateForDecimalInput()
   
+  
+  
+  
   @IBOutlet weak var ratedSpeedLabel: UILabel!
   @IBOutlet weak var maxGovernorTrippingSpeedLabel: UILabel!
   @IBOutlet weak var ratedSpeedUnitsSegmentControl: UISegmentedControl!
@@ -268,6 +271,19 @@ class governorTableViewController: UITableViewController {
     updateView()
   }
   
+  
+  @IBAction func GovernorRatedSpeedLongPress(_ sender: UILongPressGestureRecognizer) {
+    guard sender.view != nil else {return}
+    
+    if sender.state == .began {
+      self.becomeFirstResponder()
+      
+      let alert = UIAlertController(title: "Help", message: "This is a help message", preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+      self.present(alert, animated: true, completion: nil)
+    }
+    
+  }
   
   
   private func createToolBarWithDoneButtonForDecimalPad() -> UIToolbar {

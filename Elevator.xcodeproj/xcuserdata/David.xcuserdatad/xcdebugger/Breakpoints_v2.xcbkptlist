@@ -618,12 +618,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/governorTableViewController.swift"
-            timestampString = "551486534.667399"
+            timestampString = "551806218.9533319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "196"
             endingLineNumber = "196"
-            landmarkName = "actualGovernorTrippingSpeedChanged()"
+            landmarkName = "tabulatedEquivalentChanged()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -634,7 +634,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/governorTableViewController.swift"
-            timestampString = "551486534.6707031"
+            timestampString = "551806218.953886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "193"
@@ -650,7 +650,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/View Models/GovernorInspectionViewModel.swift"
-            timestampString = "550840477.441456"
+            timestampString = "551632909.878021"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -698,7 +698,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/governorTableViewController.swift"
-            timestampString = "551486534.6709369"
+            timestampString = "551806218.954242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
@@ -730,7 +730,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/View Models/GovernorInspectionViewModel.swift"
-            timestampString = "550840477.441885"
+            timestampString = "551632909.8782229"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -746,7 +746,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/View Models/GovernorInspectionViewModel.swift"
-            timestampString = "550840477.4419481"
+            timestampString = "551632909.878312"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -762,7 +762,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/View Models/GovernorInspectionViewModel.swift"
-            timestampString = "550840477.4420151"
+            timestampString = "551632909.878414"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -778,7 +778,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/governorTableViewController.swift"
-            timestampString = "551486534.671137"
+            timestampString = "551806218.9545979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
@@ -794,13 +794,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/governorTableViewController.swift"
-            timestampString = "551486534.6712379"
+            timestampString = "551806218.9548939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "176"
             endingLineNumber = "176"
-            landmarkName = "governorTableViewController"
-            landmarkType = "3">
+            landmarkName = "saveGovernorTrippingSpeedText()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -826,12 +826,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/governorTableViewController.swift"
-            timestampString = "551486534.671363"
+            timestampString = "551806218.955367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
             endingLineNumber = "118"
-            landmarkName = "updateGovernorInspectionViewWith(viewModel:)"
+            landmarkName = "updateView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -858,7 +858,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/View Models/GovernorInspectionViewModel.swift"
-            timestampString = "550840477.442374"
+            timestampString = "551632909.878605"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -970,11 +970,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/View Models/GovernorInspectionViewModel.swift"
-            timestampString = "550840477.443441"
+            timestampString = "551632909.878798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "init(elevator:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1018,7 +1018,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/View Models/GovernorInspectionViewModel.swift"
-            timestampString = "550840477.444068"
+            timestampString = "551632909.87892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -1066,13 +1066,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/governorTableViewController.swift"
-            timestampString = "551486534.672454"
+            timestampString = "551806218.956037"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "211"
             endingLineNumber = "211"
-            landmarkName = "actualGovernorTrippingSpeedUnitsChanged()"
-            landmarkType = "7">
+            landmarkName = "governorTableViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1082,7 +1082,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elevator/View Controllers/governor Table View Controller/governorTableViewController.swift"
-            timestampString = "551486534.672547"
+            timestampString = "551806218.95656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "221"

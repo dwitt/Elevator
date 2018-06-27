@@ -106,20 +106,22 @@ struct GovernorInspectionViewModel {
     
     self.elevator = elevator
     
-    elevatorRatedSpeedForGovernorSetting = elevator.ratedSpeed
-    
     // MARK: Initialize the Governor Code Model
     
     code.governor.speedReducingSwitch = elevator.governorSpeedReducingSwitch
     code.governor.staticControl = elevator.staticControl
     code.governor.actualTrippingSpeed = elevator.governorTrippingSpeed
-    code.governor.elevatorRatedSpeed = elevatorRatedSpeedForGovernorSetting
+
     
     // MARK: Initialze the View Model Properties
     
     elevatorRatedSpeedForGovernorSetting = elevator.ratedSpeed
     
     tabulatedEquivalentSpeeds = true
+    
+    elevatorRatedSpeedForGovernorSetting = inspector.elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed: elevator.ratedSpeed, usingTabulatedSpeeds: tabulatedEquivalentSpeeds, resultInUnits: elevatorRatedSpeedForGovernorSetting.unit)
+    
+    code.governor.elevatorRatedSpeed = elevatorRatedSpeedForGovernorSetting
     
     governorMaximumTrippingSpeed = code.governor.maximumTrippingSpeed
     governorMinimumTrippingSpeed = code.governor.minimumTrippingSpeed

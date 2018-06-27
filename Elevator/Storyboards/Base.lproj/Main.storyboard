@@ -274,11 +274,15 @@
                                                         <action selector="ratedSpeedForGovernorUnitsChanged" destination="uL3-iW-GJx" eventType="valueChanged" id="FCN-UX-gSk"/>
                                                     </connections>
                                                 </segmentedControl>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Rated Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7J-pO-BSG">
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Rated Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7J-pO-BSG">
                                                     <rect key="frame" x="20" y="10" width="560" height="24"/>
+                                                    <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="1Xl-eu-MC2" appends="YES" id="64z-B7-zua"/>
+                                                    </connections>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqd-5O-MI5">
                                                     <rect key="frame" x="588" y="7" width="75" height="30"/>
@@ -675,6 +679,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NEe-kW-4bf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="1Xl-eu-MC2">
+                    <connections>
+                        <action selector="GovernorRatedSpeedLongPress:" destination="uL3-iW-GJx" id="3dq-1J-mhX"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2624.6376811594205" y="213.58695652173915"/>
         </scene>
@@ -1065,16 +1074,7 @@
                             <outlet property="delegate" destination="bqK-xl-DkF" id="4HK-3I-taJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Type B Safety Inspeciton" id="RSG-hO-uhz">
-                        <barButtonItem key="rightBarButtonItem" title="Help" id="fl3-mg-dFY">
-                            <connections>
-                                <action selector="helpUIBarButtonItem:" destination="bqK-xl-DkF" id="YWD-an-9El"/>
-                                <segue destination="AXW-gC-u0J" kind="popoverPresentation" popoverAnchorBarButtonItem="fl3-mg-dFY" id="YKf-tm-a8c">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Type B Safety Inspeciton" id="RSG-hO-uhz"/>
                     <connections>
                         <outlet property="actualGovernorTrippingSpeedCell" destination="5Rx-tk-7XK" id="mac-NP-sLP"/>
                         <outlet property="governorTrippingSpeedLabel" destination="Sn4-yo-lYj" id="nEs-w9-b0m"/>
@@ -1097,21 +1097,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44Q-NA-H8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3414" y="-188"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Dn6-p0-s60">
-            <objects>
-                <viewController id="AXW-gC-u0J" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4Yp-zM-jQd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="HiZ-Ti-Tfy"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iNX-Fr-LwP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4312" y="-251"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gQQ-bk-HQN">

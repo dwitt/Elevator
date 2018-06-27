@@ -88,6 +88,10 @@ struct TypeBSafetyInspectionViewModel {
     
     ratedSpeedForSafetySlide = elevator.ratedSpeed
     
+    tabulatedEquivalentSpeeds = true
+    
+    ratedSpeedForSafetySlide = inpsector.elevatorRatedSpeedForGovernorSetting(forElevatorRatedSpeed: elevator.ratedSpeed, usingTabulatedSpeeds: tabulatedEquivalentSpeeds, resultInUnits: self.ratedSpeedForSafetySlide.unit)
+    
     // MARK: Initialize the Governor Code Model
 
     code.governor.actualTrippingSpeed = elevator.governorTrippingSpeed
