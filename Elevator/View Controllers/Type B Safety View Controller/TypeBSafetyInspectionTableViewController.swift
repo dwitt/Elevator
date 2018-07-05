@@ -168,6 +168,63 @@ class TypeBSafetyInspectionTableViewController: UITableViewController {
     }
     updateView()
   }
-  @IBAction func helpUIBarButtonItem(_ sender: UIBarButtonItem) {
+
+  @IBAction func longPressGesture(_ sender: UILongPressGestureRecognizer) {
+    guard sender.view != nil else {return}
+    
+    if sender.state == .began {
+      self.becomeFirstResponder()
+      
+      let title: String
+      let message: String
+      
+      if let indexPath = tableView.indexPathForRow(at: sender.location(in: tableView)) {
+        let row = indexPath.row
+        let section = indexPath.section
+        
+        switch section {
+        case 0:
+          switch row {
+          case 0:
+            title = "Elevator Data - Rated Speed"
+            message = "The elevator rated speed is the rated speed or contract speed of the elevator. It can only be changed by going back to the previous screen."
+          case 1:
+            title = "Elevator Data - Governor Tripping Speed"
+            message = "The actual governor tripping speed entered either on the main screen or on the governor inspection screen. It can only be changed by going back to one of these screens"
+          default:
+            title = "No Help Available"
+            message = ""
+            break
+          }
+        case 1:
+          switch row {
+          case 0:
+            title = "Type B Safety Data - Rated Speed"
+            message = "The elevator rated speed that will be used to determine the minimum and maximum allowable safety slide distances. When changing units, the position of the 'Tabulated/Equivalent Speeds' switch will be used to determine how the speed units will be converted. "
+          case 1:
+            title = "Tabulated/Equivalent Speeds"
+            message = "When in the ON position, changing the units of 'Rated Speed' will be performed by using the tables from the A17.1/B44 code book. If the speed before conversion is found in the maximum and minimum stoping distances speed table an equivalent speed will be selected from the table for the new units system. The ON performs what is sometimes called 'soft conversions'."
+          case 2:
+            title = "Max. Tripping Speed"
+            message = "This is the maximum governor tripping speed permitted for rated speed above. This value may be different from the actual tripping speed setting."
+          case 3:
+            title = "Slide per Governor Tripping Speed"
+            message = "This selection determines the basis for the maximum and minimum slide distances. If 'Actual' is selected the slide distance will be based on the actual governor tripping speed. If 'Max.' is selected the maximum permitted governor tripping speed will be used based on the Type B Safety Data - Rated Speed. The speed value used will have its background shaded to identify which speed is being using."
+          default:
+            title = "No Help Available"
+            message = ""
+          }
+        default:
+          title = "No Help Available"
+          message = ""
+          break
+        }
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+      }
+    }
   }
+  
 }

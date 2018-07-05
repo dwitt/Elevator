@@ -271,20 +271,89 @@ class governorTableViewController: UITableViewController {
     updateView()
   }
   
+
   
-  @IBAction func GovernorRatedSpeedLongPress(_ sender: UILongPressGestureRecognizer) {
+  @IBAction func longPressGesture(_ sender: UILongPressGestureRecognizer) {
     guard sender.view != nil else {return}
     
     if sender.state == .began {
       self.becomeFirstResponder()
+
+      let title: String
+      let message: String
       
-      let alert = UIAlertController(title: "Help", message: "This is a help message", preferredStyle: .alert)
-      alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-      self.present(alert, animated: true, completion: nil)
+      if let indexPath = tableView.indexPathForRow(at: sender.location(in: tableView)) {
+        let row = indexPath.row
+        let section = indexPath.section
+        
+        switch section {
+        case 0:
+          switch row {
+          case 0:
+            title = "Elevator Data - Rated Speed"
+            message = "The elevator rated speed is the rated speed or contract speed of the elevator. It can only be changed by going back to the previous screen."
+
+          default:
+            title = "No Help Available"
+            message = ""
+            break
+          }
+        case 1:
+          switch row {
+          case 0:
+            title = "Governor Data - Rated Speed"
+            message = "The elevator rated speed that will be used to determine the minimum and maximum governor tripping speed. When changing units, the position of the 'Tabulated/Equivalent Speeds' switch will be used to determine how the units will be converted. "
+          case 1:
+            title = "Tabulated/Equivalent Speeds"
+            message = "When in the ON position, changing the units of 'Rated Speed' will be performed by using the tables from the A17.1/B44 code book. If the speed before conversion is found in the governor tripping speed table an equivalent speed will be selected from the table for the new units system. The ON performs what is sometimes called 'soft conversions'."
+          case 2:
+            title = "Tripping Speed"
+            message = "Enter the actual governor tripping speed here. This value is used to calculate the overspeed switch setting and the speed reducing switch setting. The text will be green in colour if the value is within the code permitted range."
+          case 3:
+            title = "Static Control"
+            message = "This control should be set to the ON position if the elevator controller uses solid state devices in its motion control. The overspeed switch setting is influenced by this setting."
+          case 4:
+            title = "Speed Reducing Switch"
+            message = "This control should be set to the ON position if the governor is equiped with a speed reducing switch."
+          default :
+            title = "No Help Available"
+            message = ""
+            break
+          }
+        case 2:
+          switch row {
+          case 0:
+            title = "Max. Tripping Speed"
+            message = "The maximum tripping speed that the governor may be set to trip at."
+          case 1:
+            title = "Min. Tripping Speed"
+            message = "The minimum trippring speed that the governor may be set to trip at."
+          case 2:
+            title = "Overspeed Switch"
+            message = "The speed that the overspeed switch must trip at when the car is running in down direction."
+          case 3:
+            title = "Speed Reducing Switch"
+            message = "The speed that the speed reducing switch must trip at when provided."
+          default:
+            title = "No Help Available"
+            message = ""
+            
+          }
+          default:
+          title = "No Help Available"
+          message = ""
+          break
+        }
+      
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+      }
     }
-    
   }
-  
   
   private func createToolBarWithDoneButtonForDecimalPad() -> UIToolbar {
     

@@ -119,7 +119,10 @@ struct GovernorCodeRequirement {
   
   var speedReducingSwitchTrippingSpeed: Measurement<UnitSpeed> {
 
-    if elevatorRatedSpeed.value <= ratedSpeedThresholdForGovernorSwitches.lowSpeed.inUnits(elevatorRatedSpeed.unit) {
+    if staticControl {
+      return(Measurement(value: actualTrippingSpeed.value * 0.9, unit: actualTrippingSpeed.unit))
+      
+    } else if elevatorRatedSpeed.value <= ratedSpeedThresholdForGovernorSwitches.lowSpeed.inUnits(elevatorRatedSpeed.unit) {
       return(Measurement(value: actualTrippingSpeed.value * 1.0, unit: actualTrippingSpeed.unit))
       
     } else if elevatorRatedSpeed.value > ratedSpeedThresholdForGovernorSwitches.highSpeed.inUnits(elevatorRatedSpeed.unit) {
@@ -171,7 +174,7 @@ struct GovernorCodeRequirement {
     if units == UnitSystem.metric.speed {
       return Measurement(value: 0.90, unit: UnitSystem.metric.speed)
     } else {
-      return Measurement(value: 125.0, unit: UnitSystem.imperial.speed)
+      return Measurement(value: 175.0, unit: UnitSystem.imperial.speed)
     }
   }
   

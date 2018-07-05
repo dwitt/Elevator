@@ -115,7 +115,7 @@ extension Measurement where UnitType: UnitLength {
     get {
       switch self.unitSystem {
       case .metric:
-        return String(format: "%.2f", value)
+        return String(format: "%.0f", value)
       case .imperial:
         return String(format: "%.0f", value)
       default:

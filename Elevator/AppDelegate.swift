@@ -14,13 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-      // Override point for customization after application launch.
-      
-      injectViewModelDependencyIntoViewController()
-      
-      return true
-    }
+    
+    // Override point for customization after application launch.
+    
+    // Temporary test
+    
+    
+    injectViewModelDependencyIntoViewController()
+    
+    return true
+  }
   
   // TO create the data models, we check if the navigation controller is not nil and if the first view controller inside
   // the navigation controller is not nil and if so we create the data models inside the initial view controller
