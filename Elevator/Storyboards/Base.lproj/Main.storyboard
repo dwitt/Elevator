@@ -14,7 +14,7 @@
         <!--onBoardingPageView-->
         <scene sceneID="uEu-mJ-I9m">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" title="onBoardingPageView" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="vyb-tJ-FKm" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" title="onBoardingPageView" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="vyb-tJ-FKm" customClass="OnBoardingPageViewController" customModule="Elevator" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNe-Hr-d4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1772" y="-1086"/>
@@ -22,50 +22,126 @@
         <!--onBoardingOne-->
         <scene sceneID="pnR-nT-pdV">
             <objects>
-                <viewController title="onBoardingOne" id="F9e-hg-7Qu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="page0" title="onBoardingOne" id="F9e-hg-7Qu" customClass="OnBoardingPageContentViewController" customModule="Elevator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i1H-Zm-wW4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Onboarding Page 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze5-ms-iB9">
-                                <rect key="frame" x="115" y="323" width="145" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elevator Inspector" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ze5-ms-iB9">
+                                <rect key="frame" x="16" y="321" width="343" height="46"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIH-Cu-Pw8">
+                                <rect key="frame" x="83.5" y="43" width="208" height="46"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2MF-15-acE">
+                                <rect key="frame" x="91.5" y="108.5" width="192" height="192"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="FI4-se-Nk7"/>
+                                    <constraint firstAttribute="height" constant="192" id="t8T-4U-AHE"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the Mechanic's and Inspector's Toolkit for Acceptance Inspections" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Q-cU-YaQ">
+                                <rect key="frame" x="16" y="387" width="343" height="100.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.77647058823529413" green="0.12549019607843137" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ze5-ms-iB9" firstAttribute="centerX" secondItem="i1H-Zm-wW4" secondAttribute="centerX" id="0OJ-Ni-aaW"/>
+                            <constraint firstItem="vPD-ud-meI" firstAttribute="trailing" secondItem="Ze5-ms-iB9" secondAttribute="trailing" constant="16" id="0PX-ey-3gf"/>
+                            <constraint firstItem="Ze5-ms-iB9" firstAttribute="top" secondItem="2MF-15-acE" secondAttribute="bottom" constant="20" id="Dsf-bi-9X2"/>
+                            <constraint firstItem="vPD-ud-meI" firstAttribute="trailing" secondItem="Q5Q-cU-YaQ" secondAttribute="trailing" constant="16" id="JYl-fh-GLf"/>
+                            <constraint firstItem="Q5Q-cU-YaQ" firstAttribute="centerX" secondItem="i1H-Zm-wW4" secondAttribute="centerX" id="Lox-l6-wEC"/>
+                            <constraint firstItem="OIH-Cu-Pw8" firstAttribute="centerX" secondItem="i1H-Zm-wW4" secondAttribute="centerX" id="VoP-ol-ZAb"/>
+                            <constraint firstItem="Q5Q-cU-YaQ" firstAttribute="leading" secondItem="vPD-ud-meI" secondAttribute="leading" constant="16" id="aXO-NQ-onx"/>
+                            <constraint firstItem="Ze5-ms-iB9" firstAttribute="leading" secondItem="vPD-ud-meI" secondAttribute="leading" constant="16" id="cto-IH-HiP"/>
+                            <constraint firstItem="2MF-15-acE" firstAttribute="centerX" secondItem="i1H-Zm-wW4" secondAttribute="centerX" id="dK1-mb-tFf"/>
+                            <constraint firstItem="Q5Q-cU-YaQ" firstAttribute="top" secondItem="Ze5-ms-iB9" secondAttribute="bottom" constant="20" id="fsm-4K-qQL"/>
+                            <constraint firstItem="2MF-15-acE" firstAttribute="top" secondItem="OIH-Cu-Pw8" secondAttribute="bottom" constant="20" id="pv3-EQ-dsW"/>
+                            <constraint firstItem="OIH-Cu-Pw8" firstAttribute="top" secondItem="vPD-ud-meI" secondAttribute="top" constant="23" id="sgh-D8-drs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vPD-ud-meI"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FM5-1z-Q7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2591" y="-1086"/>
+            <point key="canvasLocation" x="2589.5999999999999" y="-1086.2068965517242"/>
         </scene>
         <!--onBoardingTwo-->
         <scene sceneID="g6X-wT-JCz">
             <objects>
-                <viewController title="onBoardingTwo" id="m5Z-Km-TkM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="page1" title="onBoardingTwo" id="m5Z-Km-TkM" customClass="OnBoardingPageContentWithSKSceneViewController" customModule="Elevator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pj9-PK-zcn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Onboarding Page 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcY-h2-Kpy">
-                                <rect key="frame" x="113" y="323" width="148" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ytu-b2-Kfh">
+                                <rect key="frame" x="16" y="422" width="343" height="180"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tap and hold the item of interest." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VcY-h2-Kpy">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="180"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2N-9n-WtR">
+                                <rect key="frame" x="77.5" y="84" width="220" height="330"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="ALg-5Q-equ"/>
+                                    <constraint firstAttribute="height" constant="330" id="FRp-qv-pgE"/>
+                                </constraints>
+                            </skView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="whr-se-MTl">
+                                <rect key="frame" x="135" y="43" width="105" height="33.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33.5" id="OjZ-RU-9hf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m2-Vp-Y9I">
+                                <rect key="frame" x="279" y="602" width="80" height="30"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="getStartedButtonPressed" destination="m5Z-Km-TkM" eventType="touchUpInside" id="0g9-fE-mJW"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.77647058823529413" green="0.12549019607843137" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="X2N-9n-WtR" firstAttribute="centerX" secondItem="Pj9-PK-zcn" secondAttribute="centerX" id="AxV-D4-fWq"/>
+                            <constraint firstItem="Ytu-b2-Kfh" firstAttribute="top" secondItem="X2N-9n-WtR" secondAttribute="bottom" constant="8" id="Fkf-Dj-6KX"/>
+                            <constraint firstItem="Ytu-b2-Kfh" firstAttribute="leading" secondItem="Jl3-Jk-QMt" secondAttribute="leading" constant="16" id="b6d-8R-B7M"/>
+                            <constraint firstItem="Jl3-Jk-QMt" firstAttribute="bottom" secondItem="8m2-Vp-Y9I" secondAttribute="bottom" constant="35" id="f9D-M2-CK2"/>
+                            <constraint firstItem="whr-se-MTl" firstAttribute="centerX" secondItem="Pj9-PK-zcn" secondAttribute="centerX" id="hDy-by-JjP"/>
+                            <constraint firstItem="whr-se-MTl" firstAttribute="top" secondItem="Jl3-Jk-QMt" secondAttribute="top" constant="23" id="kAK-4l-qbX"/>
+                            <constraint firstAttribute="trailing" secondItem="Ytu-b2-Kfh" secondAttribute="trailing" constant="16" id="l4P-nA-SR9"/>
+                            <constraint firstItem="Jl3-Jk-QMt" firstAttribute="bottom" secondItem="Ytu-b2-Kfh" secondAttribute="bottom" constant="65" id="uhY-d5-ldM"/>
+                            <constraint firstItem="Jl3-Jk-QMt" firstAttribute="trailing" secondItem="8m2-Vp-Y9I" secondAttribute="trailing" constant="16" id="xx6-2T-WNU"/>
+                            <constraint firstItem="X2N-9n-WtR" firstAttribute="top" secondItem="whr-se-MTl" secondAttribute="bottom" constant="8" id="zYw-4W-Mxa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Jl3-Jk-QMt"/>
                     </view>
+                    <connections>
+                        <outlet property="skView" destination="X2N-9n-WtR" id="Xzh-zK-R9M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEw-nN-re5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3343" y="-1086"/>
+            <point key="canvasLocation" x="3341.25" y="-1086.9718309859154"/>
         </scene>
         <!--Elevator Specifications-->
         <scene sceneID="wv3-3h-XGT">
@@ -75,9 +151,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
-                        <color key="separatorColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                        <color key="separatorColor" red="0.77647058820000003" green="0.12549019610000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Elevator Specifications" id="IX4-2T-C9n">
                                 <cells>
@@ -240,9 +315,7 @@
                             <outletCollection property="gestureRecognizers" destination="UuJ-KC-LxE" appends="YES" id="f1d-xB-VYp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Elevator" id="b6e-D1-R85">
-                        <barButtonItem key="rightBarButtonItem" systemItem="redo" id="BIW-3p-S8t"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Elevator" id="b6e-D1-R85"/>
                     <connections>
                         <outlet property="governorTrippingSpeedSegmentedControl" destination="egi-Gi-4ry" id="QLf-Xd-aUN"/>
                         <outlet property="governorTrippingSpeedTextField" destination="hJG-Fa-rEK" id="Kpe-RR-7RT"/>
@@ -267,9 +340,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
-                        <color key="separatorColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.77647058820000003" green="0.12549019610000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Elevator Data" id="0az-wY-Pfx">
                                 <cells>
@@ -381,7 +453,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="KiX-Aa-o2p"/>
                                                     </constraints>
-                                                    <color key="onTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="onTintColor" red="0.77647058820000003" green="0.12549019610000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="tabulatedEquivalentChanged" destination="uL3-iW-GJx" eventType="valueChanged" id="pHD-Nj-xaS"/>
                                                     </connections>
@@ -471,7 +543,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="Quo-kr-ada"/>
                                                     </constraints>
-                                                    <color key="onTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="onTintColor" red="0.77647058820000003" green="0.12549019610000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="staticControlSwitchChanged" destination="uL3-iW-GJx" eventType="valueChanged" id="UFT-CL-CJd"/>
                                                     </connections>
@@ -498,7 +570,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="Bvp-Di-rCe"/>
                                                     </constraints>
-                                                    <color key="onTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="onTintColor" red="0.77647058820000003" green="0.12549019610000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="speedReducingSwitchChanged" destination="uL3-iW-GJx" eventType="valueChanged" id="UT9-NI-t0r"/>
                                                     </connections>
@@ -761,7 +833,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <gestureRecognizers/>
-                        <color key="separatorColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.77647058820000003" green="0.12549019610000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Elevator Data" id="TMI-hP-ZYa">
                                 <cells>
@@ -927,7 +999,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="gkq-ZT-Kdf"/>
                                                     </constraints>
-                                                    <color key="onTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="onTintColor" red="0.77647058820000003" green="0.12549019610000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="tabulatedEquivalentChanged" destination="uL3-iW-GJx" eventType="valueChanged" id="HyT-d4-FaW"/>
                                                         <action selector="tabulatedEquivalentSpeedsSwitchValueChanged" destination="bqK-xl-DkF" eventType="valueChanged" id="P0s-Bu-Qnn"/>
@@ -1173,7 +1245,7 @@
         <!--Navigation Controller-->
         <scene sceneID="gQQ-bk-HQN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="edE-Ye-WAN" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="edE-Ye-WAN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yc4-ya-fbn">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1189,5 +1261,8 @@
             <point key="canvasLocation" x="1007" y="-178"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+    <resources>
+        <image name="Icon.png" width="512" height="512"/>
+    </resources>
+    <color key="tintColor" red="0.77647058820000003" green="0.12549019610000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -204,6 +204,10 @@ class elevatorTableViewController: UITableViewController{
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
     
+    if textFieldDelegateForDecimalInput.activeTextField.isEditing {
+      textFieldDelegateForDecimalInput.activeTextField.resignFirstResponder()
+    }
+    
     if let identifier = segue.identifier {
       switch identifier {
       case "governorInspection":

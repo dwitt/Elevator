@@ -10,6 +10,8 @@
 		6318053B204D79EE0063D9ED /* ElevatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318053A204D79EE0063D9ED /* ElevatorViewModel.swift */; };
 		6318053D204D7B140063D9ED /* elevatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318053C204D7B140063D9ED /* elevatorTableViewController.swift */; };
 		6339ADA320ADE2DA000DCE83 /* UnitSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6339ADA220ADE2DA000DCE83 /* UnitSpeed.swift */; };
+		633A189E20EE814400132BFC /* OnBoardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A189D20EE814400132BFC /* OnBoardingPageViewController.swift */; };
+		633A18A120EEA0C200132BFC /* OnBoardingPageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A18A020EEA0C200132BFC /* OnBoardingPageContentViewController.swift */; };
 		63512794209A7C0500C4AE0E /* TypeBSafetyInspectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63512793209A7C0500C4AE0E /* TypeBSafetyInspectionTableViewController.swift */; };
 		635488D220B22DDD005497DE /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635488D120B22DDD005497DE /* Measurement.swift */; };
 		6377BF40207107050028DD1E /* ElevatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377BF3F207107050028DD1E /* ElevatorTests.swift */; };
@@ -20,16 +22,21 @@
 		639973BE201A384300FDC6D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639973BD201A384300FDC6D7 /* AppDelegate.swift */; };
 		639973C0201A384300FDC6D7 /* governorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639973BF201A384300FDC6D7 /* governorTableViewController.swift */; };
 		639973C3201A384300FDC6D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639973C1201A384300FDC6D7 /* Main.storyboard */; };
-		639973C5201A384300FDC6D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639973C4201A384300FDC6D7 /* Assets.xcassets */; };
 		639973C8201A384300FDC6D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639973C6201A384300FDC6D7 /* LaunchScreen.storyboard */; };
 		639973D2201A39AB00FDC6D7 /* Elevator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639973D1201A39AB00FDC6D7 /* Elevator.swift */; };
 		63A16001207AD755002790DE /* SafetiesCodeRequirementTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A16000207AD755002790DE /* SafetiesCodeRequirementTest.swift */; };
 		63A16009208257F3002790DE /* MetricTypeBSafetyStoppingDistances.csv in Resources */ = {isa = PBXBuildFile; fileRef = 63A16008208257F3002790DE /* MetricTypeBSafetyStoppingDistances.csv */; };
 		63A1600D208272D7002790DE /* ImperialTypeBSafetyStoppingDistances.csv in Resources */ = {isa = PBXBuildFile; fileRef = 63A1600C208272D7002790DE /* ImperialTypeBSafetyStoppingDistances.csv */; };
+		63BAFE9220F3FE4700B4F951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639973C4201A384300FDC6D7 /* Assets.xcassets */; };
 		63CE1800205E830F00318C69 /* GovernorCodeRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE17FF205E830F00318C69 /* GovernorCodeRequirement.swift */; };
 		63CE18052061571A00318C69 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE18042061571A00318C69 /* String.swift */; };
 		63CE180720616B6A00318C69 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE180620616B6A00318C69 /* UITextField.swift */; };
 		63CE18092062C4B500318C69 /* TextFieldDelegateForDecimalInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE18082062C4B500318C69 /* TextFieldDelegateForDecimalInput.swift */; };
+		63D4D6A320F815AD00F812CB /* OnBoardingPageContentWithSKSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D4D6A220F815AD00F812CB /* OnBoardingPageContentWithSKSceneViewController.swift */; };
+		63D4D6A520F8165E00F812CB /* AnimationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D4D6A420F8165E00F812CB /* AnimationScene.swift */; };
+		63D4D6A820F8195300F812CB /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D4D6A720F8195300F812CB /* SpriteKit.framework */; };
+		63D4D6AB20F9417300F812CB /* Icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D4D6A120F814D100F812CB /* Icon@3x.png */; };
+		63D4D6AF20FBEBD600F812CB /* Help.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D4D6AE20FBEBD500F812CB /* Help.png */; };
 		63F97AE3202CBCB5006F187D /* InspectorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F97AE2202CBCB5006F187D /* InspectorDataModel.swift */; };
 		63F97AE5202DEC35006F187D /* ElevatorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F97AE4202DEC35006F187D /* ElevatorCode.swift */; };
 		63F97AE8202F7DBA006F187D /* GovernorInspectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F97AE7202F7DBA006F187D /* GovernorInspectionViewModel.swift */; };
@@ -49,6 +56,8 @@
 		6318053A204D79EE0063D9ED /* ElevatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorViewModel.swift; sourceTree = "<group>"; };
 		6318053C204D7B140063D9ED /* elevatorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = elevatorTableViewController.swift; sourceTree = "<group>"; };
 		6339ADA220ADE2DA000DCE83 /* UnitSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSpeed.swift; sourceTree = "<group>"; };
+		633A189D20EE814400132BFC /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
+		633A18A020EEA0C200132BFC /* OnBoardingPageContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageContentViewController.swift; sourceTree = "<group>"; };
 		63512793209A7C0500C4AE0E /* TypeBSafetyInspectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeBSafetyInspectionTableViewController.swift; sourceTree = "<group>"; };
 		635488D120B22DDD005497DE /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		6377BF31207100280028DD1E /* ElevatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElevatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +82,11 @@
 		63CE18042061571A00318C69 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		63CE180620616B6A00318C69 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		63CE18082062C4B500318C69 /* TextFieldDelegateForDecimalInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegateForDecimalInput.swift; sourceTree = "<group>"; };
+		63D4D6A120F814D100F812CB /* Icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@3x.png"; sourceTree = "<group>"; };
+		63D4D6A220F815AD00F812CB /* OnBoardingPageContentWithSKSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageContentWithSKSceneViewController.swift; sourceTree = "<group>"; };
+		63D4D6A420F8165E00F812CB /* AnimationScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationScene.swift; sourceTree = "<group>"; };
+		63D4D6A720F8195300F812CB /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		63D4D6AE20FBEBD500F812CB /* Help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Help.png; path = ../../../../../Desktop/Help.png; sourceTree = "<group>"; };
 		63F97AE2202CBCB5006F187D /* InspectorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorDataModel.swift; sourceTree = "<group>"; };
 		63F97AE4202DEC35006F187D /* ElevatorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorCode.swift; sourceTree = "<group>"; };
 		63F97AE7202F7DBA006F187D /* GovernorInspectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GovernorInspectionViewModel.swift; sourceTree = "<group>"; };
@@ -90,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63D4D6A820F8195300F812CB /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +160,18 @@
 				63CE18082062C4B500318C69 /* TextFieldDelegateForDecimalInput.swift */,
 			);
 			path = "View Controller Helpers";
+			sourceTree = "<group>";
+		};
+		633A189F20EE815900132BFC /* On Boarding Page View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				633A189D20EE814400132BFC /* OnBoardingPageViewController.swift */,
+				633A18A020EEA0C200132BFC /* OnBoardingPageContentViewController.swift */,
+				63D4D6A220F815AD00F812CB /* OnBoardingPageContentWithSKSceneViewController.swift */,
+				63D4D6A420F8165E00F812CB /* AnimationScene.swift */,
+			);
+			name = "On Boarding Page View Controller";
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		63512792209A7BB800C4AE0E /* Type B Safety View Controller */ = {
@@ -213,6 +240,7 @@
 				639973BC201A384300FDC6D7 /* Elevator */,
 				6377BF32207100280028DD1E /* ElevatorTests */,
 				639973BB201A384300FDC6D7 /* Products */,
+				63D4D6A620F8195300F812CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,6 +259,8 @@
 				630CBE4B205DAEAB00197347 /* Storyboards */,
 				639973BD201A384300FDC6D7 /* AppDelegate.swift */,
 				639973C4201A384300FDC6D7 /* Assets.xcassets */,
+				63D4D6A120F814D100F812CB /* Icon@3x.png */,
+				63D4D6AE20FBEBD500F812CB /* Help.png */,
 				63F97AE9202F7E0F006F187D /* View Controllers */,
 				63F97AE1202CBC85006F187D /* Data Models */,
 				63CE1801206156C600318C69 /* Extensions */,
@@ -260,6 +290,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		63D4D6A620F8195300F812CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63D4D6A720F8195300F812CB /* SpriteKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		63F97AE1202CBC85006F187D /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +314,7 @@
 		63F97AE9202F7E0F006F187D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				633A189F20EE815900132BFC /* On Boarding Page View Controller */,
 				630CBE49205DADBD00197347 /* elevator Table View Controller */,
 				630CBE4C205DAF0700197347 /* governor Table View Controller */,
 				63512792209A7BB800C4AE0E /* Type B Safety View Controller */,
@@ -376,9 +415,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				639973C8201A384300FDC6D7 /* LaunchScreen.storyboard in Resources */,
+				63BAFE9220F3FE4700B4F951 /* Assets.xcassets in Resources */,
 				63A1600D208272D7002790DE /* ImperialTypeBSafetyStoppingDistances.csv in Resources */,
-				639973C5201A384300FDC6D7 /* Assets.xcassets in Resources */,
+				63D4D6AF20FBEBD600F812CB /* Help.png in Resources */,
 				63A16009208257F3002790DE /* MetricTypeBSafetyStoppingDistances.csv in Resources */,
+				63D4D6AB20F9417300F812CB /* Icon@3x.png in Resources */,
 				639973C3201A384300FDC6D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,8 +442,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6377BF4620714CC20028DD1E /* Safeties Code Requirement.swift in Sources */,
+				63D4D6A520F8165E00F812CB /* AnimationScene.swift in Sources */,
 				6318053B204D79EE0063D9ED /* ElevatorViewModel.swift in Sources */,
+				633A18A120EEA0C200132BFC /* OnBoardingPageContentViewController.swift in Sources */,
 				6339ADA320ADE2DA000DCE83 /* UnitSpeed.swift in Sources */,
+				633A189E20EE814400132BFC /* OnBoardingPageViewController.swift in Sources */,
 				63CE18052061571A00318C69 /* String.swift in Sources */,
 				63CE18092062C4B500318C69 /* TextFieldDelegateForDecimalInput.swift in Sources */,
 				638B159F20A1FA21009DCF90 /* TypeBSafetyInspectionViewModel.swift in Sources */,
@@ -411,6 +455,7 @@
 				639973C0201A384300FDC6D7 /* governorTableViewController.swift in Sources */,
 				63CE1800205E830F00318C69 /* GovernorCodeRequirement.swift in Sources */,
 				639973BE201A384300FDC6D7 /* AppDelegate.swift in Sources */,
+				63D4D6A320F815AD00F812CB /* OnBoardingPageContentWithSKSceneViewController.swift in Sources */,
 				639973D2201A39AB00FDC6D7 /* Elevator.swift in Sources */,
 				63F97AE3202CBCB5006F187D /* InspectorDataModel.swift in Sources */,
 				63512794209A7C0500C4AE0E /* TypeBSafetyInspectionTableViewController.swift in Sources */,
