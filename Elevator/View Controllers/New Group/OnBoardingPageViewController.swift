@@ -52,11 +52,11 @@ class OnBoardingPageViewController: UIPageViewController {
         view.frame = self.view.bounds
         
       }
-      if view.isKind(of: UIPageControl.self) {
-        let pageControlView = view as! UIPageControl
-        //pageControlView.pageIndicatorTintColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 0.2529163099)
-        //pageControlView.currentPageIndicatorTintColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-      }
+//      if view.isKind(of: UIPageControl.self) {
+//        //let pageControlView = view as! UIPageControl
+//        //pageControlView.pageIndicatorTintColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 0.2529163099)
+//        //pageControlView.currentPageIndicatorTintColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+//      }
     }
   }
   
