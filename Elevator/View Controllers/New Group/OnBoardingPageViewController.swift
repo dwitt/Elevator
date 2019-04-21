@@ -110,4 +110,11 @@ extension OnBoardingPageViewController: UIPageViewControllerDataSource {
     return contentViewController
   }
   
+  func goToNextPage() {
+    guard let currentViewController = self.viewControllers?.first else { return }
+    guard let nextViewController = dataSource?.pageViewController(self, viewControllerAfter: currentViewController) else { return }
+    currentPage = currentPage + 1
+    setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
+  }
+  
 }

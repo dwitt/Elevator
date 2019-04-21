@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
       self.window?.rootViewController = onBoardingPageViewController
 
-      //defaults.set(true, forKey: "onBoarding")
+      defaults.set(true, forKey: "onBoarding")
       
     }
     
